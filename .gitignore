@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Worker
+worker/.wrangler/
+worker/dist/
+worker/.dev.vars
+
+# Dashboard
+dashboard/.svelte-kit/
+dashboard/build/

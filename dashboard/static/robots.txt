@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /app
+Disallow: /connect
+
+Sitemap: https://sheets.mreshank.com/sitemap.xml
