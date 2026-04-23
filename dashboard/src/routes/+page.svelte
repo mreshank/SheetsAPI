@@ -149,7 +149,7 @@
     <!-- Scroll indicator -->
     <div class="text-center animate-fade-in delay-700" style="margin-top: 48px;">
       <div style="display: inline-flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.2);">
-        <span style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 2px;">Scroll</span>
+        <span style="font-family: var(--font-pixel); font-size: 11px; text-transform: uppercase; letter-spacing: 2.5px;">Scroll</span>
         <div style="width: 1px; height: 32px; background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent);"></div>
       </div>
     </div>
@@ -180,12 +180,12 @@
     <div class="grid md:grid-cols-3 gap-6">
       {#each steps as step, i}
         <ScrollReveal delay={i * 150}>
-          <Card3D maxTilt={3}>
-            <div class="card-glow" style="padding: 32px;">
-              <div class="font-display" style="font-size: 48px; font-weight: 300; color: rgba(255,255,255,0.1); margin-bottom: 16px;">
+          <Card3D maxTilt={3} class="h-full">
+            <div class="card-glow h-full" style="padding: 32px;">
+              <div class="font-pixel" style="font-size: 56px; font-weight: 300; color: rgba(255,255,255,0.08); margin-bottom: 16px;">
                 {step.num}
               </div>
-              <div class="font-display" style="font-size: 14px; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 12px;">
+              <div class="font-brand" style="font-size: 15px; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 12px;">
                 {step.title}
               </div>
               <p style="color: rgba(255,255,255,0.5); font-size: 15px; line-height: 1.6;">
@@ -198,7 +198,7 @@
     </div>
 
     <!-- Connecting line -->
-    <div class="hidden md:block" style="margin-top: -60px; position: relative; z-index: -1;">
+    <div class="hidden md:block--x " style="margin-top: -60px; position: relative; z-index: -1;">
       <div style="
         height: 1px;
         background: linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0.06) 70%, transparent 90%);
@@ -228,7 +228,7 @@
           <span class="terminal-dot"></span>
           <span class="terminal-dot"></span>
           <span class="terminal-dot"></span>
-          <span style="margin-left: auto; font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.2); text-transform: uppercase; letter-spacing: 1px;">LIVE</span>
+          <span style="margin-left: auto; font-family: var(--font-pixel); font-size: 11px; color: rgba(255,255,255,0.2); text-transform: uppercase; letter-spacing: 1.5px;">LIVE</span>
         </div>
         <div class="terminal-body" style="min-height: 200px;">
           <div><span class="syn-comment"># Fetch all rows from the "leads" tab</span></div>
@@ -259,7 +259,7 @@
           { method: 'DELETE', desc: 'Delete rows' }
         ] as endpoint}
           <div class="card" style="padding: 16px 20px;">
-            <div class="font-display" style="font-size: 13px; letter-spacing: 1px; margin-bottom: 4px;">{endpoint.method}</div>
+            <div class="font-pixel" style="font-size: 14px; letter-spacing: 1.2px; margin-bottom: 4px;">{endpoint.method}</div>
             <div style="font-size: 13px; color: rgba(255,255,255,0.4);">{endpoint.desc}</div>
           </div>
         {/each}
@@ -280,7 +280,7 @@
           <div>
             <div style="font-size: clamp(32px, 5vw, 48px); font-weight: 300; margin-bottom: 8px;">
               {#if stat.display}
-                <span class="font-display">{stat.display}</span>
+                <span class="font-pixel">{stat.display}</span>
               {:else}
                 <CountUp target={stat.value} suffix={stat.suffix} duration={2500} />
               {/if}

@@ -55,7 +55,7 @@
             <div class="card-glow" style="padding: 24px; height: 100%;">
               <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
                 <span style="font-size: 18px; color: rgba(255,255,255,0.5);">{@html f.icon}</span>
-                <span class="font-display" style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 500;">
+                <span class="font-brand" style="font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400;">
                   {f.title}
                 </span>
                 {#if f.badge}

@@ -82,7 +82,7 @@
   <div class="max-w-3xl mx-auto px-6">
     {#each sections as sec, si}
       <ScrollReveal delay={si * 80}>
-        <h2 class="font-display" style="font-size:14px;text-transform:uppercase;letter-spacing:1.4px;margin-top:{si > 0 ? '48px' : '0'};margin-bottom:16px;">{sec.title}</h2>
+        <h2 class="font-brand" style="font-size:15px;text-transform:uppercase;letter-spacing:1.8px;margin-top:{si > 0 ? '48px' : '0'};margin-bottom:16px;">{sec.title}</h2>
         <div style="display:flex;flex-direction:column;gap:6px;">
           {#each sec.items as f}
             <details class="card-glow group" style="padding:18px 22px;">

@@ -62,7 +62,7 @@
       <!-- Brand -->
       <a href="/" class="flex items-center gap-3 group" style="text-decoration: none;">
         <img src="/logo-64.webp" alt="SheetsAPI" width="28" height="28" style="display:block;" />
-        <span class="font-display text-base tracking-wider" style="letter-spacing: 2px; text-transform: uppercase; color: #ffffff;">
+        <span class="font-brand text-base tracking-wider" style="letter-spacing: 2.5px; text-transform: uppercase; color: #ffffff; font-size: 15px;">
           SheetsAPI
         </span>
       </a>
@@ -160,7 +160,7 @@
     <div class="max-w-6xl mx-auto px-6 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
       <!-- Brand column -->
       <div>
-        <div class="font-display text-sm" style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;">SheetsAPI</div>
+        <div class="font-brand text-sm" style="text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 12px;">SheetsAPI</div>
         <p style="color: rgba(255,255,255,0.5); font-size: 14px; line-height: 1.6;">
           Turn any Google Sheet into a REST API. Free. OAuth-based. Open.
         </p>
@@ -209,10 +209,10 @@
     <!-- Bottom bar -->
     <div style="border-top: 1px solid rgba(255,255,255,0.06);">
       <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center" style="font-size: 12px;">
-        <div style="color: rgba(255,255,255,0.3); font-family: var(--font-mono); letter-spacing: 0.5px;">
+        <div style="color: rgba(255,255,255,0.3); font-family: var(--font-pixel); letter-spacing: 1px; font-size: 12px;">
           © {new Date().getFullYear()} SHEETSAPI
         </div>
-        <div style="color: rgba(255,255,255,0.2); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.5px;">
+        <div style="color: rgba(255,255,255,0.2); font-family: var(--font-pixel); font-size: 11px; letter-spacing: 1px;">
           SVELTEKIT + CLOUDFLARE
         </div>
       </div>

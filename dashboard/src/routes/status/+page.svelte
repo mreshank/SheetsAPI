@@ -39,7 +39,7 @@
 
     <ScrollReveal delay={100}>
       <div class="card-glow" style="padding:24px;">
-        <div class="font-display" style="font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.4);margin-bottom:16px;">COMPONENTS</div>
+        <div class="font-pixel" style="font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.4);margin-bottom:16px;">COMPONENTS</div>
         <div style="display:flex;flex-direction:column;gap:10px;">
           {#each components as c}
             <div style="display:flex;align-items:center;justify-content:space-between;font-size:14px;">
@@ -53,7 +53,7 @@
 
     <ScrollReveal delay={200}>
       <div class="card-glow" style="padding:24px;">
-        <div class="font-display" style="font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.4);margin-bottom:16px;">90-DAY UPTIME</div>
+        <div class="font-pixel" style="font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.4);margin-bottom:16px;">90-DAY UPTIME</div>
         <div style="display:flex;gap:2px;overflow-x:auto;">
           {#each days as _}
             <div style="width:6px;height:32px;background:rgba(34,197,94,0.6);flex-shrink:0;"></div>
@@ -69,7 +69,7 @@
 
     <ScrollReveal delay={300}>
       <div class="card-glow" style="padding:24px;">
-        <div class="font-display" style="font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.4);margin-bottom:12px;">RECENT INCIDENTS</div>
+        <div class="font-pixel" style="font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.4);margin-bottom:12px;">RECENT INCIDENTS</div>
         <p style="font-size:14px;color:rgba(255,255,255,0.4);">No incidents reported in the last 90 days.</p>
       </div>
     </ScrollReveal>

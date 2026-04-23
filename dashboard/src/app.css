@@ -6,9 +6,7 @@
    SheetsAPI Design System — xAI-inspired Dark Brutalist
    ================================================================ */
 
-/* --- Font Imports --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&display=swap');
+
 
 /* --- Design Tokens --- */
 @theme {
@@ -29,8 +27,11 @@
   --color-accent: #ffffff;
 
   /* Typography */
-  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, 'Roboto Mono', Menlo, Monaco, 'Liberation Mono', 'DejaVu Sans Mono', 'Courier New', monospace;
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Bitcount Prop Single', system-ui, monospace;
+  --font-sans: 'Anta', system-ui, sans-serif;
+  --font-display: 'Anta', sans-serif;
+  --font-brand: 'Asimovian', sans-serif;
+  --font-pixel: 'Bitcount Prop Single', system-ui, monospace;
 
   /* Spacing */
   --space-xs: 4px;
@@ -91,7 +92,17 @@ body {
    Typography
    ================================================================ */
 .font-display {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
+}
+
+.font-brand {
+  font-family: var(--font-brand);
+}
+
+.font-pixel {
+  font-family: var(--font-pixel);
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
 }
 
 .font-body {
@@ -99,26 +110,30 @@ body {
 }
 
 .text-hero {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: clamp(48px, 8vw, 120px);
-  font-weight: 300;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .text-section {
-  font-family: var(--font-sans);
+  font-family: var(--font-brand);
   font-size: clamp(24px, 3vw, 36px);
   font-weight: 400;
   line-height: 1.2;
+  letter-spacing: 0.01em;
 }
 
 .text-mono-label {
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-pixel);
+  font-optical-sizing: auto;
   font-weight: 400;
+  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   color: var(--color-text-muted);
 }
 
@@ -130,7 +145,9 @@ body {
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
-  font-family: var(--font-mono);
+  font-family: var(--font-pixel);
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
@@ -149,9 +166,11 @@ body {
   align-items: center;
   justify-content: center;
   padding: 12px 28px;
-  font-family: var(--font-mono);
+  font-family: var(--font-pixel);
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1.4px;
   text-decoration: none;
@@ -173,7 +192,9 @@ body {
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
-  font-family: var(--font-mono);
+  font-family: var(--font-pixel);
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
@@ -285,11 +306,13 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 4px 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-pixel);
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
+  font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   color: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 0;

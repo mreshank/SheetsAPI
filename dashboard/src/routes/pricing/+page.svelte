@@ -134,7 +134,7 @@
             >
               <!-- Header -->
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-                <span class="font-display" style="font-size: 13px; letter-spacing: 1.4px;">{t.name}</span>
+                <span class="font-pixel" style="font-size: 13px; letter-spacing: 1.6px;">{t.name}</span>
                 {#if t.badge}
                   <span class="badge" style="font-size: 9px; padding: 2px 6px;">{t.badge}</span>
                 {/if}
@@ -179,7 +179,7 @@
   <div class="max-w-3xl mx-auto px-6">
     <ScrollReveal>
       <div class="card-glow" style="padding: 32px;">
-        <h2 class="font-display" style="font-size: 14px; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 24px;">
+        <h2 class="font-brand" style="font-size: 15px; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 24px;">
           COMPARED AT 100K REQ/MONTH
         </h2>
         <table style="width: 100%; border-collapse: collapse;">

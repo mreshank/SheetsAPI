@@ -41,7 +41,7 @@
 <div class="card-3d {className}">
   <div
     bind:this={card}
-    class="card-3d-inner"
+    class="card-3d-inner h-full"
     style:transform
     onmousemove={handleMouseMove}
     onmouseleave={handleMouseLeave}

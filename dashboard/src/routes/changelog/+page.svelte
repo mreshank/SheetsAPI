@@ -68,7 +68,7 @@
 
     <ScrollReveal delay={releases.length * 120}>
       <div class="card-glow" style="padding:24px;">
-        <div class="font-display" style="font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.4);margin-bottom:8px;">WHAT'S NEXT</div>
+        <div class="font-pixel" style="font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.4);margin-bottom:8px;">WHAT'S NEXT</div>
         <p style="font-size:14px;color:rgba(255,255,255,0.5);">See our full <a href="/docs" style="color:rgba(255,255,255,0.8);text-decoration:underline;">roadmap</a> for planned features through v1.0.</p>
       </div>
     </ScrollReveal>

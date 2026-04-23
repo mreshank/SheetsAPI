@@ -123,7 +123,7 @@
 
     <!-- Spreadsheets -->
     <div class="card-glow" style="padding:28px;margin-bottom:20px;">
-      <h2 class="font-display" style="font-size:14px;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:20px;">SPREADSHEETS</h2>
+      <h2 class="font-brand" style="font-size:15px;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:20px;">SPREADSHEETS</h2>
 
       <div style="display:flex;gap:8px;margin-bottom:24px;">
         <input
@@ -178,7 +178,7 @@
 
     <!-- API Keys -->
     <div class="card-glow" style="padding:28px;margin-bottom:20px;">
-      <h2 class="font-display" style="font-size:14px;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:4px;">API KEYS</h2>
+      <h2 class="font-brand" style="font-size:15px;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:4px;">API KEYS</h2>
       <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:20px;">
         Optional. If you create any, all endpoints require <code style="font-family:var(--font-mono);background:rgba(255,255,255,0.06);padding:1px 5px;font-size:12px;">Authorization: Bearer &lt;key&gt;</code>.
       </p>
@@ -207,7 +207,7 @@
 
     <!-- Usage -->
     <div class="card-glow" style="padding:28px;">
-      <h2 class="font-display" style="font-size:14px;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:20px;">USAGE EXAMPLES</h2>
+      <h2 class="font-brand" style="font-size:15px;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:20px;">USAGE EXAMPLES</h2>
       {#if me.spreadsheets[0] && tabsById[me.spreadsheets[0].id]?.[0]}
         {@const tab = tabsById[me.spreadsheets[0].id][0].title}
         {@const url = endpoint(me.userKey, tab)}
