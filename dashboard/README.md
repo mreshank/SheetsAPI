@@ -4,13 +4,13 @@ SvelteKit 5 + Tailwind v4 static site. Hosts `sheets.mreshank.com` — marketing
 
 ## Stack
 
-| Layer       | Tech                                                              |
-| ----------- | ----------------------------------------------------------------- |
-| Framework   | SvelteKit 5 with Svelte 5 runes                                   |
-| Styling     | Tailwind CSS v4 via `@tailwindcss/vite`, `@tailwindcss/typography`, `@tailwindcss/forms` |
-| Markdown    | `mdsvex` (`.md`, `.svx` render as Svelte components)              |
-| Adapter     | `@sveltejs/adapter-static` → outputs to `build/`                  |
-| Host        | Cloudflare Pages                                                  |
+| Layer     | Tech                                                                                     |
+| --------- | ---------------------------------------------------------------------------------------- |
+| Framework | SvelteKit 5 with Svelte 5 runes                                                          |
+| Styling   | Tailwind CSS v4 via `@tailwindcss/vite`, `@tailwindcss/typography`, `@tailwindcss/forms` |
+| Markdown  | `mdsvex` (`.md`, `.svx` render as Svelte components)                                     |
+| Adapter   | `@sveltejs/adapter-static` → outputs to `build/`                                         |
+| Host      | Cloudflare Pages                                                                         |
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ Only env var read by the dashboard: `VITE_API_BASE`. Point it at your Worker.
 
 ```bash
 npm run build              # generates ./build
-npm run deploy             # wrangler pages deploy build --project-name=sheetsapi-dashboard
+npm run deploy             # wrangler pages deploy build --project-name=sheetsapi-app
 ```
 
 Attach the custom domain in Cloudflare dashboard → Pages → Custom domains → `sheets.mreshank.com`.

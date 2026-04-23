@@ -31,14 +31,14 @@ Cloudflare matches **Worker routes before Pages**, so any request to `/api/*` hi
 
 ## 2. Prerequisites
 
-| Tool                                 | Why                                              |
-| ------------------------------------ | ------------------------------------------------ |
-| Node 20+, npm 10+                    | Build Worker and Dashboard                       |
-| `wrangler` CLI (`npm i -g wrangler`) | Deploy Worker + Pages; manage D1                 |
-| Cloudflare account (free)            | Workers + D1 + Pages hosting                     |
-| Google Cloud account (free)          | OAuth client + Sheets API + Drive API            |
-| `mreshank.com` on Cloudflare DNS     | Required for Worker route + Pages custom domain  |
-| `openssl`                            | Generate ENCRYPTION_KEY                          |
+| Tool                                 | Why                                             |
+| ------------------------------------ | ----------------------------------------------- |
+| Node 20+, npm 10+                    | Build Worker and Dashboard                      |
+| `wrangler` CLI (`npm i -g wrangler`) | Deploy Worker + Pages; manage D1                |
+| Cloudflare account (free)            | Workers + D1 + Pages hosting                    |
+| Google Cloud account (free)          | OAuth client + Sheets API + Drive API           |
+| `mreshank.com` on Cloudflare DNS     | Required for Worker route + Pages custom domain |
+| `openssl`                            | Generate ENCRYPTION_KEY                         |
 
 ---
 
@@ -69,16 +69,16 @@ SheetsAPI/
 
 APIs & Services → OAuth consent screen → **External** → Create.
 
-| Field                 | Value                                                |
-| --------------------- | ---------------------------------------------------- |
-| App name              | SheetsAPI                                            |
-| User support email    | `your-email@mreshank.com`                            |
-| App logo              | Upload a 120×120 PNG                                 |
-| App home page         | `https://sheets.mreshank.com`                        |
-| Privacy policy        | `https://sheets.mreshank.com/legal/privacy`          |
-| Terms of service      | `https://sheets.mreshank.com/legal/terms`            |
-| Authorized domains    | `mreshank.com`                                       |
-| Developer contact     | `your-email@mreshank.com`                            |
+| Field              | Value                                       |
+| ------------------ | ------------------------------------------- |
+| App name           | SheetsAPI                                   |
+| User support email | `your-email@mreshank.com`                   |
+| App logo           | Upload a 120×120 PNG                        |
+| App home page      | `https://sheets.mreshank.com`               |
+| Privacy policy     | `https://sheets.mreshank.com/legal/privacy` |
+| Terms of service   | `https://sheets.mreshank.com/legal/terms`   |
+| Authorized domains | `mreshank.com`                              |
+| Developer contact  | `your-email@mreshank.com`                   |
 
 **Scopes**: `openid`, `email`, `https://www.googleapis.com/auth/spreadsheets`, `https://www.googleapis.com/auth/drive.file`.
 
@@ -88,11 +88,11 @@ APIs & Services → OAuth consent screen → **External** → Create.
 
 Credentials → Create Credentials → **OAuth client ID** → Web application.
 
-| Field                          | Value                                                           |
-| ------------------------------ | --------------------------------------------------------------- |
-| Name                           | SheetsAPI Web                                                   |
-| Authorized JavaScript origins  | `https://sheets.mreshank.com`                                   |
-| Authorized redirect URIs       | `https://sheets.mreshank.com/api/oauth/callback` ⚠️ note `/api` |
+| Field                         | Value                                                           |
+| ----------------------------- | --------------------------------------------------------------- |
+| Name                          | SheetsAPI Web                                                   |
+| Authorized JavaScript origins | `https://sheets.mreshank.com`                                   |
+| Authorized redirect URIs      | `https://sheets.mreshank.com/api/oauth/callback` ⚠️ note `/api` |
 
 Copy **Client ID** and **Client Secret** — used in section 5.
 
@@ -176,14 +176,14 @@ npm run build
 
 ```bash
 npm run deploy
-# runs: vite build && wrangler pages deploy build --project-name=sheetsapi-dashboard
+# runs: vite build && wrangler pages deploy build --project-name=sheetsapi-app
 ```
 
 Cloudflare prints a `*.pages.dev` URL — sanity check it loads.
 
 ### 6.3 Attach the custom domain
 
-Cloudflare dashboard → **Workers & Pages → sheetsapi-dashboard → Custom domains → Set up a custom domain** → `sheets.mreshank.com`.
+Cloudflare dashboard → **Workers & Pages → sheetsapi-app → Custom domains → Set up a custom domain** → `sheets.mreshank.com`.
 
 Cloudflare provisions the cert and adds a CNAME automatically.
 
@@ -242,11 +242,11 @@ Turnaround: 2–4 weeks. Until verified, users outside your allowlist see a "thi
 
 ## 9. DNS summary
 
-| Host                        | Type          | Managed by                             |
-| --------------------------- | ------------- | -------------------------------------- |
-| `mreshank.com`              | (your setup)  | —                                      |
-| `sheets.mreshank.com`       | CNAME         | Cloudflare Pages custom domain         |
-| `sheets.mreshank.com/api/*` | Worker route  | Cloudflare Workers (same hostname)     |
+| Host                        | Type         | Managed by                         |
+| --------------------------- | ------------ | ---------------------------------- |
+| `mreshank.com`              | (your setup) | —                                  |
+| `sheets.mreshank.com`       | CNAME        | Cloudflare Pages custom domain     |
+| `sheets.mreshank.com/api/*` | Worker route | Cloudflare Workers (same hostname) |
 
 One subdomain, one CNAME, one Worker route.
 
@@ -299,14 +299,14 @@ npm run dev
 
 ## 12. Cost ceiling
 
-| Resource          | Free tier                      | When you'd pay                   |
-| ----------------- | ------------------------------ | -------------------------------- |
-| Workers           | 100k req/day                   | $5/mo → 10M req                  |
-| D1                | 5 GB, 5M reads/day             | $5/mo → 25B reads/mo             |
-| Pages             | Unlimited bandwidth            | Never (static)                   |
-| Apps Script       | Unlimited                      | Never                            |
-| Google Sheets API | Free (300/min/project)         | Free quota increase via support  |
-| Domain            | You already own it             | —                                |
+| Resource          | Free tier              | When you'd pay                  |
+| ----------------- | ---------------------- | ------------------------------- |
+| Workers           | 100k req/day           | $5/mo → 10M req                 |
+| D1                | 5 GB, 5M reads/day     | $5/mo → 25B reads/mo            |
+| Pages             | Unlimited bandwidth    | Never (static)                  |
+| Apps Script       | Unlimited              | Never                           |
+| Google Sheets API | Free (300/min/project) | Free quota increase via support |
+| Domain            | You already own it     | —                               |
 
 Realistically: **$0/month** until you're past 100k API requests/day.
 

@@ -72,10 +72,10 @@ echo "VITE_API_BASE=https://sheets.mreshank.com" > .env
 npm run build
 
 # First deploy
-wrangler pages deploy build --project-name=sheetsapi-dashboard
+wrangler pages deploy build --project-name=sheetsapi-app
 
 # Attach custom domain
-# Cloudflare dashboard → Pages → sheetsapi-dashboard → Custom domains → sheets.mreshank.com
+# Cloudflare dashboard → Pages → sheetsapi-app → Custom domains → sheets.mreshank.com
 ```
 
 ## Step 4 — Add-on publish
@@ -84,9 +84,10 @@ wrangler pages deploy build --project-name=sheetsapi-dashboard
 2. Replace default files with [`addon/Code.gs`](../addon/Code.gs), [`addon/Sidebar.html`](../addon/Sidebar.html), [`addon/appsscript.json`](../addon/appsscript.json)
 3. **Project Settings → "Show appsscript.json"** (checkbox) → paste manifest
 4. **Project Settings → Google Cloud Platform (GCP) Project** → link the same GCP project from Step 1
-5. **Deploy → Test deployments → Install**  — verify the Add-on appears under `Extensions → SheetsAPI`
+5. **Deploy → Test deployments → Install** — verify the Add-on appears under `Extensions → SheetsAPI`
 
 For public distribution:
+
 1. Google Workspace Marketplace SDK (enable in GCP) → fill listing (screenshots, description, pricing=free)
 2. Pay the one-time $5 Developer Registration fee
 3. Submit for review (typical: 1–3 weeks)
@@ -108,22 +109,24 @@ Go through as an end-user:
 
 ## DNS summary
 
-| Record              | Type  | Target                                       |
-| ------------------- | ----- | -------------------------------------------- |
-| `mreshank.com`      | —     | (your existing setup)                        |
-| `sheets.mreshank.com` | CNAME | managed by Cloudflare Workers custom domain  |
-| `sheets.mreshank.com`  | CNAME | managed by Cloudflare Pages custom domain    |
+| Record                | Type  | Target                                      |
+| --------------------- | ----- | ------------------------------------------- |
+| `mreshank.com`        | —     | (your existing setup)                       |
+| `sheets.mreshank.com` | CNAME | managed by Cloudflare Workers custom domain |
+| `sheets.mreshank.com` | CNAME | managed by Cloudflare Pages custom domain   |
 
 Both get automatic Cloudflare-issued certs.
 
 ## Observability
 
 Cloudflare provides:
+
 - **Workers → Metrics**: request count, CPU time, error rate
 - **D1 → Metrics**: query count, latency
 - **Pages → Analytics**: pageviews, referrers
 
 For deeper insight (roadmap):
+
 - Cloudflare Logpush → R2 or external sink
 - Sentry for Worker errors (use `@sentry/cloudflare`)
 - Grafana Cloud free tier for dashboards
@@ -132,20 +135,20 @@ For deeper insight (roadmap):
 
 ```bash
 cd worker && wrangler rollback    # lists recent deployments; pick one
-cd dashboard && wrangler pages deployment list --project-name=sheetsapi-dashboard
+cd dashboard && wrangler pages deployment list --project-name=sheetsapi-app
 # promote an earlier deployment from the dashboard UI
 ```
 
 ## Cost ceiling (as of 2026-01)
 
-| Resource          | Free tier                      | Cost past tier             |
-| ----------------- | ------------------------------ | -------------------------- |
-| Workers           | 100k req/day                   | $5/month → 10M req         |
-| D1                | 5 GB, 5M reads/day             | $5/month → 25B reads/mo    |
-| Pages             | Unlimited bandwidth            | —                          |
-| Workers Secrets   | Unlimited                      | —                          |
-| Apps Script       | Unlimited free                 | —                          |
-| Google Sheets API | Free (300/min/project)         | Quota increase free via GCP support |
-| Domain            | Already owned                  | —                          |
+| Resource          | Free tier              | Cost past tier                      |
+| ----------------- | ---------------------- | ----------------------------------- |
+| Workers           | 100k req/day           | $5/month → 10M req                  |
+| D1                | 5 GB, 5M reads/day     | $5/month → 25B reads/mo             |
+| Pages             | Unlimited bandwidth    | —                                   |
+| Workers Secrets   | Unlimited              | —                                   |
+| Apps Script       | Unlimited free         | —                                   |
+| Google Sheets API | Free (300/min/project) | Quota increase free via GCP support |
+| Domain            | Already owned          | —                                   |
 
 You'd need >100k API calls/day before paying anything.
