@@ -1,5 +1,6 @@
 <script lang="ts">
   import Seo from '$lib/Seo.svelte';
+  import ScrollReveal from '$lib/ScrollReveal.svelte';
   import { faqSchema } from '$lib/schema';
 
   const sections = [
@@ -67,20 +68,33 @@
   schema={[faqSchema(allItems)]}
 />
 
-<article class="max-w-3xl mx-auto px-6 py-16">
-  <h1 class="text-4xl font-semibold tracking-tight">Frequently asked questions</h1>
-
-  {#each sections as sec}
-    <h2 class="text-2xl font-semibold mt-12 mb-4">{sec.title}</h2>
-    <div class="space-y-3">
-      {#each sec.items as f}
-        <details class="card p-5 group">
-          <summary class="font-medium cursor-pointer list-none flex justify-between">
-            {f.q}<span class="text-slate-400 group-open:rotate-45 transition">+</span>
-          </summary>
-          <p class="mt-3 text-sm text-slate-600 whitespace-pre-line">{f.a}</p>
-        </details>
-      {/each}
+<section style="padding:72px 0 48px;position:relative;">
+  <div class="absolute inset-0 bg-gradient-radial"></div>
+  <div class="max-w-3xl mx-auto px-6 relative">
+    <div class="animate-fade-in-up">
+      <div class="text-mono-label" style="margin-bottom:16px;">SUPPORT</div>
+      <h1 class="text-hero" style="font-size:clamp(36px,6vw,64px);margin-bottom:16px;">FAQ</h1>
     </div>
-  {/each}
-</article>
+  </div>
+</section>
+
+<section style="padding:0 0 96px;">
+  <div class="max-w-3xl mx-auto px-6">
+    {#each sections as sec, si}
+      <ScrollReveal delay={si * 80}>
+        <h2 class="font-display" style="font-size:14px;text-transform:uppercase;letter-spacing:1.4px;margin-top:{si > 0 ? '48px' : '0'};margin-bottom:16px;">{sec.title}</h2>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          {#each sec.items as f}
+            <details class="card-glow group" style="padding:18px 22px;">
+              <summary style="font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-size:14px;">
+                {f.q}
+                <span style="color:rgba(255,255,255,0.3);transition:transform 0.3s;font-family:var(--font-mono);font-size:18px;" class="group-open:rotate-45">+</span>
+              </summary>
+              <p style="margin-top:12px;color:rgba(255,255,255,0.5);font-size:13px;line-height:1.7;">{f.a}</p>
+            </details>
+          {/each}
+        </div>
+      </ScrollReveal>
+    {/each}
+  </div>
+</section>

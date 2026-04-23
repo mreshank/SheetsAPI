@@ -12,8 +12,8 @@
 
   <h2 class="text-2xl font-semibold mt-10">Status codes</h2>
   <table class="w-full text-sm mt-3 card overflow-hidden">
-    <thead class="bg-slate-50 border-b border-slate-200 text-left"><tr><th class="p-3">Code</th><th class="p-3">Meaning</th></tr></thead>
-    <tbody class="divide-y divide-slate-100">
+    <thead style="background:rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.1);text-align:left;"><tr><th class="p-3">Code</th><th class="p-3">Meaning</th></tr></thead>
+    <tbody class="">
       <tr><td class="p-3 font-mono">200</td><td class="p-3">OK</td></tr>
       <tr><td class="p-3 font-mono">400</td><td class="p-3">Bad request — malformed body, bad row index, missing header row</td></tr>
       <tr><td class="p-3 font-mono">401</td><td class="p-3">Missing or invalid API key (when keys are required)</td></tr>

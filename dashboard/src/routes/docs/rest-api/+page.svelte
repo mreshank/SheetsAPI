@@ -18,7 +18,7 @@
 
   <h3 class="font-semibold mt-6">GET — list rows</h3>
   <pre class="code mt-2">GET /api/spreadsheets/{'{userKey}'}/{'{sheetName}'}</pre>
-  <p class="mt-2">Returns an array of objects keyed by the header row. See <a href="/docs/search-and-filters" class="text-brand-600 underline">search & filters</a> for query parameters.</p>
+  <p class="mt-2">Returns an array of objects keyed by the header row. See <a href="/docs/search-and-filters" style="color:rgba(255,255,255,0.7);text-decoration:underline;">search & filters</a> for query parameters.</p>
 
   <h3 class="font-semibold mt-6">GET — one row</h3>
   <pre class="code mt-2">GET /api/spreadsheets/{'{userKey}'}/{'{sheetName}'}/{'{row}'}</pre>

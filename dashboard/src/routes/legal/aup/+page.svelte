@@ -8,9 +8,9 @@
   canonical="/legal/aup"
 />
 
-<article class="max-w-3xl mx-auto px-6 py-16 prose">
+<article class="max-w-3xl mx-auto px-6 py-16 prose-dark">
   <h1 class="text-4xl font-semibold">Acceptable Use Policy</h1>
-  <p class="text-slate-500 mt-2">Last updated: 2026-04-21</p>
+  <p style="color:rgba(255,255,255,0.4);font-family:var(--font-mono);font-size:13px;margin-top:8px;">Last updated: 2026-04-21</p>
 
   <h2 class="text-2xl font-semibold mt-10">You may NOT use SheetsAPI to:</h2>
   <ul class="list-disc pl-5 space-y-1">
@@ -31,5 +31,5 @@
   <p>We may suspend or terminate access for violations, with notice where practicable. Serious violations (child safety, imminent harm) may be acted on without prior notice and reported to authorities.</p>
 
   <h2 class="text-2xl font-semibold mt-10">Reporting abuse</h2>
-  <p>Report abuse to <a href="mailto:abuse@mreshank.com" class="text-brand-600 underline">abuse@mreshank.com</a>. We triage within 48 hours.</p>
+  <p>Report abuse to <a href="mailto:abuse@mreshank.com" style="color:rgba(255,255,255,0.7);text-decoration:underline;">abuse@mreshank.com</a>. We triage within 48 hours.</p>
 </article>

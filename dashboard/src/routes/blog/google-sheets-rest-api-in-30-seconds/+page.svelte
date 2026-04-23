@@ -17,7 +17,7 @@ Ada   | ada@example.com    | 2026-04-21
 Alan  | alan@example.com   | 2026-04-22</pre>
 
   <h2 class="text-2xl font-semibold mt-8">Step 2 — Connect to SheetsAPI</h2>
-  <p>Visit <a href="/app" class="text-brand-600 underline">sheets.mreshank.com</a> and sign in with Google. Paste your sheet's URL. Done — you now have a <code>userKey</code>.</p>
+  <p>Visit <a href="/app" style="color:rgba(255,255,255,0.7);text-decoration:underline;">sheets.mreshank.com</a> and sign in with Google. Paste your sheet's URL. Done — you now have a <code>userKey</code>.</p>
 
   <h2 class="text-2xl font-semibold mt-8">Step 3 — Call the API</h2>
   <p>Your endpoint is <code>https://sheets.mreshank.com/api/spreadsheets/&lt;userKey&gt;/&lt;tab&gt;</code>.</p>
@@ -39,5 +39,5 @@ Alan  | alan@example.com   | 2026-04-22</pre>
   <pre class="code">curl -X DELETE 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads/1'</pre>
 
   <h2 class="text-2xl font-semibold mt-8">That's it</h2>
-  <p>From here: <a href="/docs/search-and-filters" class="text-brand-600 underline">search and filter</a>, <a href="/docs/authentication" class="text-brand-600 underline">secure with API keys</a>, or <a href="/use-cases" class="text-brand-600 underline">browse use cases</a> for inspiration.</p>
+  <p>From here: <a href="/docs/search-and-filters" style="color:rgba(255,255,255,0.7);text-decoration:underline;">search and filter</a>, <a href="/docs/authentication" style="color:rgba(255,255,255,0.7);text-decoration:underline;">secure with API keys</a>, or <a href="/use-cases" style="color:rgba(255,255,255,0.7);text-decoration:underline;">browse use cases</a> for inspiration.</p>
 </BlogPost>

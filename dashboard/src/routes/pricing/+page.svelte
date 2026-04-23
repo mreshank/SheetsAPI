@@ -1,74 +1,77 @@
 <script lang="ts">
   import Seo from '$lib/Seo.svelte';
+  import ScrollReveal from '$lib/ScrollReveal.svelte';
+  import Card3D from '$lib/Card3D.svelte';
   import { faqSchema } from '$lib/schema';
 
   const tiers = [
     {
-      name: 'Free',
+      name: 'FREE',
       price: '$0',
       per: 'forever',
       highlight: 'Best for personal projects, prototypes, no-code tools.',
-      cta: 'Get started free',
+      cta: 'GET STARTED',
       ctaHref: '/app',
+      featured: true,
       features: [
         'Unlimited spreadsheets',
-        '~3M requests/month (shared fair-use)',
+        '~3M requests/month',
         'Full CRUD + search + filter',
-        'All output formats (JSON, CSV, TSV, XML, JSONP)',
+        'All output formats',
         'API keys',
         'Workspace Add-on',
         'Community support'
       ]
     },
     {
-      name: 'Pro',
+      name: 'PRO',
       price: '$9',
       per: '/ month',
       highlight: 'For solo builders running production workloads.',
-      cta: 'Join waitlist',
+      cta: 'JOIN WAITLIST',
       ctaHref: '/app',
-      badge: 'Coming v0.8',
+      badge: 'v0.8',
       features: [
         'Everything in Free',
         '10× rate limit per user',
         'Usage analytics',
-        'Custom domain (api.yourco.com)',
+        'Custom domain',
         'Webhooks on changes',
-        'Scoped API keys (read-only, per-tab, expiring)',
+        'Scoped API keys',
         'Email support'
       ]
     },
     {
-      name: 'Team',
+      name: 'TEAM',
       price: '$29',
       per: '/ month',
       highlight: 'Collaborate with teammates on shared sheets.',
-      cta: 'Join waitlist',
+      cta: 'JOIN WAITLIST',
       ctaHref: '/app',
-      badge: 'Coming v0.8',
+      badge: 'v0.8',
       features: [
         'Everything in Pro',
         'Up to 5 members',
-        'Shared spreadsheet bindings',
+        'Shared sheet bindings',
         'Role-based API keys',
         '90-day audit log',
         'Slack/Discord alerts'
       ]
     },
     {
-      name: 'Enterprise',
+      name: 'ENTERPRISE',
       price: 'Custom',
       per: '',
       highlight: 'SSO, SLA, BAA, dedicated quota, custom DPA.',
-      cta: 'Contact us',
+      cta: 'CONTACT US',
       ctaHref: 'mailto:hello@mreshank.com',
       features: [
         'Everything in Team',
         '99.9% SLA',
         'HIPAA BAA available',
         'SSO (Google, Okta)',
-        'Dedicated Google Cloud quota',
-        'Invoicing / PO billing',
+        'Dedicated quota',
+        'Invoice billing',
         'Priority support'
       ]
     }
@@ -81,68 +84,160 @@
     { q: 'Can I self-host for free?', a: 'Yes — the entire worker + dashboard + schema is open source. Bring your own Cloudflare account and Google OAuth client.' },
     { q: 'Do you offer a discount for students or non-profits?', a: 'The free tier already covers most of those use cases. For non-profit Pro/Team needs, email us.' }
   ];
+
+  const competitors = [
+    { name: 'SheetDB.io Pro', cost: '$29' },
+    { name: 'Sheety Starter', cost: '$29' },
+    { name: 'Sheetson Pro', cost: '$24' },
+    { name: 'APISpreadsheets Team', cost: '$50' },
+    { name: 'SheetsAPI Free', cost: '$0', highlight: true }
+  ];
 </script>
 
 <Seo
   title="Pricing — SheetsAPI is free for individuals"
-  description="Free forever for personal use: ~3M requests/month, full CRUD, search, filters, output formats, API keys. Pro ($9/mo) for production. Team ($29/mo) for collaboration. Cheaper than SheetDB, Sheety, Sheetson."
+  description="Free forever for personal use: ~3M requests/month, full CRUD, search, filters, output formats, API keys. Pro ($9/mo) for production. Team ($29/mo) for collaboration."
   canonical="/pricing"
   schema={[faqSchema(faqs)]}
 />
 
-<section class="max-w-6xl mx-auto px-6 py-16 text-center">
-  <h1 class="text-4xl font-semibold tracking-tight">Simple, honest pricing</h1>
-  <p class="mt-3 text-lg text-slate-600 max-w-2xl mx-auto">Free for individuals. Cheaper than every alternative. Self-host for $0 forever if you want.</p>
-</section>
-
-<section class="max-w-6xl mx-auto px-6 pb-20 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-  {#each tiers as t}
-    <div class="card p-6 flex flex-col">
-      <div class="flex items-baseline justify-between">
-        <div class="font-semibold text-lg">{t.name}</div>
-        {#if t.badge}<span class="text-xs bg-slate-100 px-2 py-0.5 rounded">{t.badge}</span>{/if}
-      </div>
-      <div class="mt-3 flex items-baseline gap-1">
-        <div class="text-3xl font-bold">{t.price}</div>
-        <div class="text-slate-500 text-sm">{t.per}</div>
-      </div>
-      <p class="text-sm text-slate-600 mt-2">{t.highlight}</p>
-      <ul class="mt-4 space-y-2 text-sm flex-1">
-        {#each t.features as f}
-          <li class="flex gap-2"><span class="text-brand-500">✓</span><span class="text-slate-700">{f}</span></li>
-        {/each}
-      </ul>
-      <a href={t.ctaHref} class="btn-primary mt-6">{t.cta}</a>
+<!-- Header -->
+<section style="padding: 72px 0 48px; position: relative;">
+  <div class="absolute inset-0 bg-gradient-radial"></div>
+  <div class="max-w-6xl mx-auto px-6 text-center relative">
+    <div class="animate-fade-in-up">
+      <div class="text-mono-label" style="margin-bottom: 16px;">PRICING</div>
+      <h1 class="text-hero" style="font-size: clamp(32px, 5vw, 64px); margin-bottom: 16px;">
+        HONEST PRICING
+      </h1>
+      <p style="font-size: 18px; color: rgba(255,255,255,0.5); max-width: 480px; margin: 0 auto; line-height: 1.7;">
+        Free for individuals. Cheaper than every alternative. Self-host for $0 forever.
+      </p>
     </div>
-  {/each}
-</section>
-
-<section class="max-w-4xl mx-auto px-6 pb-24">
-  <div class="card p-8">
-    <h2 class="text-xl font-semibold mb-4">Compared to the alternatives (100k req/month)</h2>
-    <table class="w-full text-sm">
-      <thead><tr class="text-left border-b border-slate-200"><th class="py-2">Service</th><th>Monthly cost</th></tr></thead>
-      <tbody class="divide-y divide-slate-100">
-        <tr><td class="py-2">SheetDB.io Pro</td><td>$29</td></tr>
-        <tr><td class="py-2">Sheety Starter</td><td>$29</td></tr>
-        <tr><td class="py-2">Sheetson Pro</td><td>$24</td></tr>
-        <tr><td class="py-2">APISpreadsheets Team</td><td>$50</td></tr>
-        <tr class="bg-brand-50"><td class="py-2 font-semibold">SheetsAPI Free</td><td class="font-semibold">$0</td></tr>
-      </tbody>
-    </table>
   </div>
 </section>
 
-<section class="max-w-3xl mx-auto px-6 pb-24">
-  <h2 class="text-2xl font-semibold mb-6">Frequently asked</h2>
-  <div class="space-y-4">
-    {#each faqs as f}
-      <details class="card p-5 group">
-        <summary class="font-medium cursor-pointer list-none flex justify-between">
-          {f.q}<span class="text-slate-400 group-open:rotate-45 transition">+</span>
-        </summary>
-        <p class="mt-3 text-sm text-slate-600">{f.a}</p>
-      </details>
-    {/each}
+<!-- Pricing Cards -->
+<section style="padding: 0 0 72px;">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      {#each tiers as t, i}
+        <ScrollReveal delay={i * 100}>
+          <Card3D maxTilt={2}>
+            <div
+              class="card-glow flex flex-col"
+              style="
+                padding: 28px;
+                height: 100%;
+                {t.featured ? 'border-color: rgba(255,255,255,0.25);' : ''}
+              "
+            >
+              <!-- Header -->
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+                <span class="font-display" style="font-size: 13px; letter-spacing: 1.4px;">{t.name}</span>
+                {#if t.badge}
+                  <span class="badge" style="font-size: 9px; padding: 2px 6px;">{t.badge}</span>
+                {/if}
+              </div>
+
+              <!-- Price -->
+              <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 8px;">
+                <span class="font-display" style="font-size: 36px; font-weight: 300;">{t.price}</span>
+                <span style="color: rgba(255,255,255,0.3); font-size: 14px;">{t.per}</span>
+              </div>
+
+              <p style="color: rgba(255,255,255,0.4); font-size: 13px; margin-bottom: 24px; line-height: 1.5;">{t.highlight}</p>
+
+              <!-- Features -->
+              <ul style="list-style: none; padding: 0; margin: 0 0 24px; flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                {#each t.features as f}
+                  <li style="display: flex; gap: 8px; font-size: 13px;">
+                    <span style="color: rgba(255,255,255,0.3); flex-shrink: 0;">→</span>
+                    <span style="color: rgba(255,255,255,0.6);">{f}</span>
+                  </li>
+                {/each}
+              </ul>
+
+              <!-- CTA -->
+              <a
+                href={t.ctaHref}
+                class={t.featured ? 'btn-primary' : 'btn-ghost'}
+                style="width: 100%; text-align: center; font-size: 12px;"
+              >
+                {t.cta}
+              </a>
+            </div>
+          </Card3D>
+        </ScrollReveal>
+      {/each}
+    </div>
+  </div>
+</section>
+
+<!-- Comparison Table -->
+<section style="padding: 48px 0 72px;">
+  <div class="max-w-3xl mx-auto px-6">
+    <ScrollReveal>
+      <div class="card-glow" style="padding: 32px;">
+        <h2 class="font-display" style="font-size: 14px; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 24px;">
+          COMPARED AT 100K REQ/MONTH
+        </h2>
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <th style="text-align: left; padding: 8px 0; font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-mono);">Service</th>
+              <th style="text-align: right; padding: 8px 0; font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-mono);">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each competitors as c}
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); {c.highlight ? 'background: rgba(255,255,255,0.03);' : ''}">
+                <td style="padding: 12px 0; font-size: 14px; {c.highlight ? 'font-weight: 500;' : 'color: rgba(255,255,255,0.6);'}">{c.name}</td>
+                <td style="padding: 12px 0; font-size: 14px; text-align: right; font-family: var(--font-mono); {c.highlight ? 'font-weight: 500;' : 'color: rgba(255,255,255,0.6);'}">{c.cost}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    </ScrollReveal>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding: 0 0 96px;">
+  <div class="max-w-3xl mx-auto px-6">
+    <ScrollReveal>
+      <div class="text-mono-label" style="margin-bottom: 16px;">FAQ</div>
+      <h2 class="text-section" style="margin-bottom: 32px;">Frequently asked</h2>
+    </ScrollReveal>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      {#each faqs as f, i}
+        <ScrollReveal delay={i * 80}>
+          <details class="card-glow group" style="padding: 20px 24px;">
+            <summary style="
+              font-weight: 500;
+              cursor: pointer;
+              list-style: none;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 15px;
+            ">
+              {f.q}
+              <span style="
+                color: rgba(255,255,255,0.3);
+                transition: transform 0.3s;
+                font-family: var(--font-mono);
+                font-size: 18px;
+              " class="group-open:rotate-45">+</span>
+            </summary>
+            <p style="margin-top: 12px; color: rgba(255,255,255,0.5); font-size: 14px; line-height: 1.7;">
+              {f.a}
+            </p>
+          </details>
+        </ScrollReveal>
+      {/each}
+    </div>
   </div>
 </section>

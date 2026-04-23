@@ -37,5 +37,5 @@ let leads = try JSONDecoder().decode([[String: String]].self, from: data)`}</pre
   <p class="mt-3">Both will wrap the same URL patterns; nothing you build today needs to change when they ship.</p>
 
   <h2 class="text-2xl font-semibold mt-10">OpenAPI</h2>
-  <p>Generate a spec for your sheet with the <a href="/tools/openapi-generator" class="text-brand-600 underline">OpenAPI Generator tool</a>. Use it with Postman, Insomnia, or <code>openapi-typescript</code> / <code>openapi-generator-cli</code>.</p>
+  <p>Generate a spec for your sheet with the <a href="/tools/openapi-generator" style="color:rgba(255,255,255,0.7);text-decoration:underline;">OpenAPI Generator tool</a>. Use it with Postman, Insomnia, or <code>openapi-typescript</code> / <code>openapi-generator-cli</code>.</p>
 </DocLayout>

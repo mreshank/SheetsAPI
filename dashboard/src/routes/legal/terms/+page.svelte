@@ -8,9 +8,9 @@
   canonical="/legal/terms"
 />
 
-<article class="max-w-3xl mx-auto px-6 py-16 prose">
+<article class="max-w-3xl mx-auto px-6 py-16 prose-dark">
   <h1 class="text-4xl font-semibold">Terms of Service</h1>
-  <p class="text-slate-500 mt-2">Last updated: 2026-04-21</p>
+  <p style="color:rgba(255,255,255,0.4);font-family:var(--font-mono);font-size:13px;margin-top:8px;">Last updated: 2026-04-21</p>
 
   <h2 class="text-2xl font-semibold mt-10">1. Agreement</h2>
   <p>By using SheetsAPI, you agree to these terms. If you don't agree, don't use it.</p>
@@ -25,10 +25,10 @@
   <p>Your spreadsheet data remains yours and stays in your Google Drive. You grant us the limited right to proxy API calls to Google on your behalf.</p>
 
   <h2 class="text-2xl font-semibold mt-10">5. Acceptable use</h2>
-  <p>You agree to our <a href="/legal/aup" class="text-brand-600 underline">Acceptable Use Policy</a>. Briefly: no illegal content, no spam, no abuse, no attacks.</p>
+  <p>You agree to our <a href="/legal/aup" style="color:rgba(255,255,255,0.7);text-decoration:underline;">Acceptable Use Policy</a>. Briefly: no illegal content, no spam, no abuse, no attacks.</p>
 
   <h2 class="text-2xl font-semibold mt-10">6. Availability</h2>
-  <p>The service is provided "as is" on a best-effort basis. Paid tiers may include an <a href="/legal/sla" class="text-brand-600 underline">SLA</a>; the free tier does not.</p>
+  <p>The service is provided "as is" on a best-effort basis. Paid tiers may include an <a href="/legal/sla" style="color:rgba(255,255,255,0.7);text-decoration:underline;">SLA</a>; the free tier does not.</p>
 
   <h2 class="text-2xl font-semibold mt-10">7. Warranties disclaimer</h2>
   <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, SHEETSAPI IS PROVIDED WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED.</p>
@@ -46,5 +46,5 @@
   <p>These terms are governed by the laws of India, without regard to conflict-of-laws rules. Disputes shall be resolved in the courts of New Delhi.</p>
 
   <h2 class="text-2xl font-semibold mt-10">12. Contact</h2>
-  <p><a href="mailto:hello@mreshank.com" class="text-brand-600 underline">hello@mreshank.com</a></p>
+  <p><a href="mailto:hello@mreshank.com" style="color:rgba(255,255,255,0.7);text-decoration:underline;">hello@mreshank.com</a></p>
 </article>

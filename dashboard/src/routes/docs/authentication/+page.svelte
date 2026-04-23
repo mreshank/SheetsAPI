@@ -30,9 +30,9 @@
   <p>Two paths — either works:</p>
   <ol class="mt-2 list-decimal pl-5 space-y-1">
     <li>Sign out of the SheetsAPI dashboard — this deletes all our records for your account.</li>
-    <li>Remove the app from <a href="https://myaccount.google.com/permissions" class="text-brand-600 underline">myaccount.google.com/permissions</a>.</li>
+    <li>Remove the app from <a href="https://myaccount.google.com/permissions" style="color:rgba(255,255,255,0.7);text-decoration:underline;">myaccount.google.com/permissions</a>.</li>
   </ol>
 
   <h2 class="text-2xl font-semibold mt-10">Storage & encryption</h2>
-  <p>Refresh tokens are AES-GCM-256 encrypted at rest with a key stored separately from the database. See <a href="/security" class="text-brand-600 underline">Security</a>.</p>
+  <p>Refresh tokens are AES-GCM-256 encrypted at rest with a key stored separately from the database. See <a href="/security" style="color:rgba(255,255,255,0.7);text-decoration:underline;">Security</a>.</p>
 </DocLayout>

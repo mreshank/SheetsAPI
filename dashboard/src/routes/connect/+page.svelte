@@ -34,11 +34,11 @@
 
 <div class="max-w-xl mx-auto px-6 py-24 text-center">
   {#if working}
-    <h1 class="text-2xl font-semibold mb-2">Connecting sheet…</h1>
-    <p class="text-slate-500">Just a moment.</p>
+    <h1 style="font-family:var(--font-mono);font-size:24px;font-weight:300;margin-bottom:8px;">CONNECTING SHEET…</h1>
+    <p style="color:rgba(255,255,255,0.4);font-size:14px;">Just a moment.</p>
   {:else if error}
-    <h1 class="text-2xl font-semibold mb-2 text-red-700">Couldn't connect</h1>
-    <p class="text-slate-600">{error}</p>
-    <a href="/app" class="btn-primary mt-6 inline-flex">Go to Dashboard</a>
+    <h1 style="font-family:var(--font-mono);font-size:24px;font-weight:300;margin-bottom:8px;color:#ef4444;">COULDN'T CONNECT</h1>
+    <p style="color:rgba(255,255,255,0.5);font-size:14px;">{error}</p>
+    <a href="/app" class="btn-primary" style="margin-top:24px;">GO TO DASHBOARD</a>
   {/if}
 </div>

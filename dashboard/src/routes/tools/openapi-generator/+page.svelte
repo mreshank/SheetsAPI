@@ -43,7 +43,7 @@
 
 <section class="max-w-5xl mx-auto px-6 py-12">
   <h1 class="text-3xl font-semibold">OpenAPI Generator</h1>
-  <p class="text-slate-600 mt-2">Generate an OpenAPI 3.1 spec for your sheet. Import anywhere.</p>
+  <p style="color:rgba(255,255,255,0.4);margin-top:8px;">Generate an OpenAPI 3.1 spec for your sheet. Import anywhere.</p>
 
   <div class="card p-6 mt-8 grid sm:grid-cols-3 gap-3">
     <div><label class="text-sm font-medium">userKey</label><input bind:value={userKey} class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono text-sm" /></div>

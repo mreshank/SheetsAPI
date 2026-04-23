@@ -9,4 +9,4 @@
   <link rel="canonical" href="https://sheets.mreshank.com/legal/privacy" />
 </svelte:head>
 
-<p class="p-8 text-slate-500">Redirecting to <a href="/legal/privacy" class="text-brand-600 underline">Privacy Policy</a>…</p>
+<p style="padding:32px;color:rgba(255,255,255,0.4);font-family:var(--font-mono);font-size:13px;">Redirecting to <a href="/legal/privacy" style="color:rgba(255,255,255,0.7);text-decoration:underline;">Privacy Policy</a>…</p>

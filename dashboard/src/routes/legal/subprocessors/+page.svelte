@@ -13,17 +13,17 @@
   canonical="/legal/subprocessors"
 />
 
-<article class="max-w-3xl mx-auto px-6 py-16 prose">
+<article class="max-w-3xl mx-auto px-6 py-16 prose-dark">
   <h1 class="text-4xl font-semibold">Subprocessors</h1>
-  <p class="text-slate-500 mt-2">Last updated: 2026-04-21</p>
+  <p style="color:rgba(255,255,255,0.4);font-family:var(--font-mono);font-size:13px;margin-top:8px;">Last updated: 2026-04-21</p>
 
   <p>SheetsAPI uses the following subprocessors to deliver the service. We notify customers 30 days before adding or changing subprocessors.</p>
 
-  <table class="w-full text-sm mt-6 card overflow-hidden">
-    <thead class="bg-slate-50"><tr class="text-left"><th class="p-3">Name</th><th class="p-3">Purpose</th><th class="p-3">Location</th></tr></thead>
-    <tbody class="divide-y divide-slate-100">
+  <table class="w-full text-sm mt-6" style="border:1px solid rgba(255,255,255,0.1);overflow:hidden;">
+    <thead style="background:rgba(255,255,255,0.06);"><tr class="text-left"><th class="p-3">Name</th><th class="p-3">Purpose</th><th class="p-3">Location</th></tr></thead>
+    <tbody class="">
       {#each subs as s}
-        <tr><td class="p-3 font-medium">{s.name}</td><td class="p-3">{s.purpose}</td><td class="p-3 text-slate-500">{s.location}</td></tr>
+        <tr><td class="p-3 font-medium">{s.name}</td><td class="p-3">{s.purpose}</td><td class="p-3" style="color:rgba(255,255,255,0.4);">{s.location}</td></tr>
       {/each}
     </tbody>
   </table>
@@ -35,5 +35,5 @@
   </ul>
 
   <h2 class="text-2xl font-semibold mt-10">Notifications</h2>
-  <p>Subscribe to updates at <a href="mailto:legal@mreshank.com" class="text-brand-600 underline">legal@mreshank.com</a> to receive subprocessor-change notifications.</p>
+  <p>Subscribe to updates at <a href="mailto:legal@mreshank.com" style="color:rgba(255,255,255,0.7);text-decoration:underline;">legal@mreshank.com</a> to receive subprocessor-change notifications.</p>
 </article>

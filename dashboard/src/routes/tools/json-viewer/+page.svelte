@@ -37,7 +37,7 @@
 
 <section class="max-w-5xl mx-auto px-6 py-12">
   <h1 class="text-3xl font-semibold">JSON Viewer</h1>
-  <p class="text-slate-600 mt-2">Paste JSON, format it, or minify it. All client-side — your data never leaves the browser.</p>
+  <p style="color:rgba(255,255,255,0.4);margin-top:8px;">Paste JSON, format it, or minify it. All client-side — your data never leaves the browser.</p>
 
   <div class="grid md:grid-cols-2 gap-4 mt-8">
     <div>
@@ -53,7 +53,7 @@
       {#if error}
         <div class="mt-1 p-3 bg-red-50 text-red-700 rounded-lg text-sm">{error}</div>
       {:else}
-        <pre class="h-96 mt-1 p-3 bg-slate-900 text-slate-100 rounded-lg overflow-auto text-xs">{output}</pre>
+        <pre class="h-96 mt-1 p-3 bg-[rgba(255,255,255,0.04)] text-[rgba(255,255,255,0.7)] rounded-lg overflow-auto text-xs">{output}</pre>
       {/if}
     </div>
   </div>

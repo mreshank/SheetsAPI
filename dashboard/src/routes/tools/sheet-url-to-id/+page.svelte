@@ -22,7 +22,7 @@
 
 <section class="max-w-3xl mx-auto px-6 py-12">
   <h1 class="text-3xl font-semibold">Sheet URL → ID</h1>
-  <p class="text-slate-600 mt-2">Extract the spreadsheet ID (and tab GID) from any Google Sheets URL.</p>
+  <p style="color:rgba(255,255,255,0.4);margin-top:8px;">Extract the spreadsheet ID (and tab GID) from any Google Sheets URL.</p>
 
   <div class="mt-8">
     <label class="text-sm font-medium">URL</label>
@@ -31,11 +31,11 @@
 
   <div class="grid sm:grid-cols-2 gap-4 mt-6">
     <div class="card p-4">
-      <div class="text-xs text-slate-500 uppercase">Spreadsheet ID</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.4);text-transform:uppercase;">Spreadsheet ID</div>
       <div class="font-mono text-sm mt-2 break-all">{id || '—'}</div>
     </div>
     <div class="card p-4">
-      <div class="text-xs text-slate-500 uppercase">Tab GID</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.4);text-transform:uppercase;">Tab GID</div>
       <div class="font-mono text-sm mt-2">{gid || '—'}</div>
     </div>
   </div>

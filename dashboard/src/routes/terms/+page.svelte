@@ -9,4 +9,4 @@
   <link rel="canonical" href="https://sheets.mreshank.com/legal/terms" />
 </svelte:head>
 
-<p class="p-8 text-slate-500">Redirecting to <a href="/legal/terms" class="text-brand-600 underline">Terms of Service</a>…</p>
+<p style="padding:32px;color:rgba(255,255,255,0.4);font-family:var(--font-mono);font-size:13px;">Redirecting to <a href="/legal/terms" style="color:rgba(255,255,255,0.7);text-decoration:underline;">Terms of Service</a>…</p>

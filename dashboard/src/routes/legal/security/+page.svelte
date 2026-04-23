@@ -8,11 +8,11 @@
   canonical="/legal/security"
 />
 
-<article class="max-w-3xl mx-auto px-6 py-16 prose">
+<article class="max-w-3xl mx-auto px-6 py-16 prose-dark">
   <h1 class="text-4xl font-semibold">Security & Responsible Disclosure</h1>
 
   <h2 class="text-2xl font-semibold mt-10">Reporting</h2>
-  <p>Email <a href="mailto:security@mreshank.com" class="text-brand-600 underline">security@mreshank.com</a>. Please include:</p>
+  <p>Email <a href="mailto:security@mreshank.com" style="color:rgba(255,255,255,0.7);text-decoration:underline;">security@mreshank.com</a>. Please include:</p>
   <ul class="list-disc pl-5 space-y-1">
     <li>Description of the vulnerability</li>
     <li>Steps to reproduce</li>
@@ -40,8 +40,8 @@
   </ul>
 
   <h2 class="text-2xl font-semibold mt-10">security.txt</h2>
-  <p>Our <a href="/.well-known/security.txt" class="text-brand-600 underline">security.txt</a> is published at the well-known location per RFC 9116.</p>
+  <p>Our <a href="/.well-known/security.txt" style="color:rgba(255,255,255,0.7);text-decoration:underline;">security.txt</a> is published at the well-known location per RFC 9116.</p>
 
   <h2 class="text-2xl font-semibold mt-10">More</h2>
-  <p>See our <a href="/security" class="text-brand-600 underline">Security page</a> for the architecture and threat model.</p>
+  <p>See our <a href="/security" style="color:rgba(255,255,255,0.7);text-decoration:underline;">Security page</a> for the architecture and threat model.</p>
 </article>

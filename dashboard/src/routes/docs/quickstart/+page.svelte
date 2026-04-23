@@ -15,7 +15,7 @@ Alan  | alan@example.com   | 2026-04-22</pre>
 
   <h2 class="text-2xl font-semibold mt-10">2. Connect to SheetsAPI</h2>
   <ol class="mt-2 list-decimal pl-5 space-y-1">
-    <li><a href="/app" class="text-brand-600 underline">Sign in with Google</a>.</li>
+    <li><a href="/app" style="color:rgba(255,255,255,0.7);text-decoration:underline;">Sign in with Google</a>.</li>
     <li>Paste your Google Sheet URL.</li>
     <li>Copy the endpoint URL from your dashboard.</li>
   </ol>
@@ -40,8 +40,8 @@ Alan  | alan@example.com   | 2026-04-22</pre>
 
   <h2 class="text-2xl font-semibold mt-10">Next</h2>
   <ul class="mt-2 list-disc pl-5 space-y-1">
-    <li><a href="/docs/search-and-filters" class="text-brand-600 underline">Search, filter, paginate</a></li>
-    <li><a href="/docs/authentication" class="text-brand-600 underline">Lock it down with API keys</a></li>
-    <li><a href="/docs/errors" class="text-brand-600 underline">Handle errors</a></li>
+    <li><a href="/docs/search-and-filters" style="color:rgba(255,255,255,0.7);text-decoration:underline;">Search, filter, paginate</a></li>
+    <li><a href="/docs/authentication" style="color:rgba(255,255,255,0.7);text-decoration:underline;">Lock it down with API keys</a></li>
+    <li><a href="/docs/errors" style="color:rgba(255,255,255,0.7);text-decoration:underline;">Handle errors</a></li>
   </ul>
 </DocLayout>

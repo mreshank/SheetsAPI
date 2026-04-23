@@ -1,5 +1,7 @@
 <script lang="ts">
   import Seo from './Seo.svelte';
+  import ScrollReveal from './ScrollReveal.svelte';
+  import Card3D from './Card3D.svelte';
   import { breadcrumbSchema, faqSchema } from './schema';
 
   type Row = { feature: string; us: string; them: string };
@@ -40,69 +42,101 @@
 <Seo {title} {description} {canonical} {schema} />
 
 <article class="max-w-4xl mx-auto px-6 py-16">
-  <nav class="text-sm text-slate-500 mb-4">
-    <a href="/compare" class="hover:text-slate-900">Compare</a> / {competitor}
-  </nav>
-  <h1 class="text-4xl font-semibold tracking-tight">{title}</h1>
-  <p class="mt-3 text-lg text-slate-600 max-w-2xl">{tagline}</p>
+  <ScrollReveal>
+    <nav style="font-size: 13px; color: rgba(255,255,255,0.3); margin-bottom: 24px; font-family: var(--font-mono);">
+      <a href="/compare" style="color: rgba(255,255,255,0.4); text-decoration: none;" class="hover:text-white">COMPARE</a>
+      <span style="margin: 0 8px;">→</span>
+      <span>{competitor}</span>
+    </nav>
+    <h1 style="font-family: var(--font-mono); font-size: clamp(24px, 4vw, 40px); font-weight: 300; margin-bottom: 12px;">
+      {title}
+    </h1>
+    <p style="color: rgba(255,255,255,0.5); font-size: 16px; max-width: 600px; line-height: 1.7;">
+      {tagline}
+    </p>
+  </ScrollReveal>
 
-  <div class="mt-10 card p-6">
-    <h2 class="font-semibold">TL;DR</h2>
-    <p class="mt-2 text-slate-700">{summary}</p>
-  </div>
+  <!-- TL;DR -->
+  <ScrollReveal delay={100}>
+    <div class="card-glow" style="margin-top: 32px; padding: 24px;">
+      <div class="font-display" style="font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,0.4); margin-bottom: 8px;">TL;DR</div>
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.7;">{summary}</p>
+    </div>
+  </ScrollReveal>
 
-  <div class="mt-10">
-    <h2 class="text-2xl font-semibold mb-4">Feature comparison</h2>
-    <div class="card overflow-hidden">
-      <table class="w-full text-sm">
-        <thead class="bg-slate-50 border-b border-slate-200">
-          <tr class="text-left">
-            <th class="p-3">Feature</th>
-            <th class="p-3 text-brand-700">SheetsAPI</th>
-            <th class="p-3">{competitor}</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-100">
-          {#each matrix as r}
-            <tr>
-              <td class="p-3 font-medium">{r.feature}</td>
-              <td class="p-3 text-brand-700">{r.us}</td>
-              <td class="p-3 text-slate-600">{r.them}</td>
+  <!-- Feature Comparison Table -->
+  <ScrollReveal delay={200}>
+    <div style="margin-top: 40px;">
+      <h2 class="font-display" style="font-size: 14px; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 20px;">FEATURE COMPARISON</h2>
+      <div class="card-glow" style="overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <thead>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <th style="text-align: left; padding: 12px 16px; font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-mono);">Feature</th>
+              <th style="text-align: left; padding: 12px 16px; font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-mono);">SheetsAPI</th>
+              <th style="text-align: left; padding: 12px 16px; font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-mono);">{competitor}</th>
             </tr>
-          {/each}
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  {#if whyUs.length}
-    <div class="mt-10">
-      <h2 class="text-2xl font-semibold mb-4">Why teams switch to SheetsAPI</h2>
-      <ul class="space-y-2">
-        {#each whyUs as w}
-          <li class="flex gap-3"><span class="text-brand-500 font-bold">✓</span><span class="text-slate-700">{w}</span></li>
-        {/each}
-      </ul>
-    </div>
-  {/if}
-
-  {#if faqs.length}
-    <div class="mt-14">
-      <h2 class="text-2xl font-semibold mb-4">Common questions</h2>
-      <div class="space-y-3">
-        {#each faqs as f}
-          <details class="card p-5 group">
-            <summary class="font-medium cursor-pointer list-none flex justify-between">{f.q}<span class="text-slate-400 group-open:rotate-45 transition">+</span></summary>
-            <p class="mt-3 text-sm text-slate-600">{f.a}</p>
-          </details>
-        {/each}
+          </thead>
+          <tbody>
+            {#each matrix as r}
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 10px 16px; color: rgba(255,255,255,0.6); font-weight: 500;">{r.feature}</td>
+                <td style="padding: 10px 16px; color: rgba(255,255,255,0.8);">{r.us}</td>
+                <td style="padding: 10px 16px; color: rgba(255,255,255,0.4);">{r.them}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
       </div>
     </div>
+  </ScrollReveal>
+
+  <!-- Why Switch -->
+  {#if whyUs.length}
+    <ScrollReveal delay={300}>
+      <div style="margin-top: 40px;">
+        <h2 class="font-display" style="font-size: 14px; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 20px;">WHY TEAMS SWITCH</h2>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          {#each whyUs as w}
+            <div style="display: flex; gap: 12px; font-size: 14px;">
+              <span style="color: rgba(255,255,255,0.3); font-family: var(--font-mono); flex-shrink: 0;">→</span>
+              <span style="color: rgba(255,255,255,0.6);">{w}</span>
+            </div>
+          {/each}
+        </div>
+      </div>
+    </ScrollReveal>
   {/if}
 
-  <div class="mt-14 card p-8 bg-brand-50 text-center">
-    <div class="text-xl font-semibold">Ready to switch from {competitor}?</div>
-    <p class="text-slate-600 mt-2">Migrate in minutes. Free forever.</p>
-    <a href="/app" class="btn-primary mt-4 inline-flex">Sign in with Google</a>
-  </div>
+  <!-- FAQ -->
+  {#if faqs.length}
+    <ScrollReveal delay={400}>
+      <div style="margin-top: 48px;">
+        <h2 class="font-display" style="font-size: 14px; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 20px;">COMMON QUESTIONS</h2>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          {#each faqs as f}
+            <details class="card-glow group" style="padding: 18px 22px;">
+              <summary style="font-weight: 500; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
+                {f.q}
+                <span style="color: rgba(255,255,255,0.3); transition: transform 0.3s; font-family: var(--font-mono); font-size: 18px;" class="group-open:rotate-45">+</span>
+              </summary>
+              <p style="margin-top: 12px; color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.7;">{f.a}</p>
+            </details>
+          {/each}
+        </div>
+      </div>
+    </ScrollReveal>
+  {/if}
+
+  <!-- CTA -->
+  <ScrollReveal delay={500}>
+    <div class="card-glow" style="margin-top: 56px; padding: 40px; text-align: center; position: relative; overflow: hidden;">
+      <div class="absolute inset-0 bg-dots" style="opacity: 0.2;"></div>
+      <div style="position: relative;">
+        <div style="font-family: var(--font-mono); font-size: 18px; font-weight: 400;">READY TO SWITCH FROM {competitor.toUpperCase()}?</div>
+        <p style="color: rgba(255,255,255,0.4); font-size: 14px; margin-top: 8px;">Migrate in minutes. Free forever.</p>
+        <a href="/app" class="btn-primary" style="margin-top: 20px;">SIGN IN WITH GOOGLE</a>
+      </div>
+    </div>
+  </ScrollReveal>
 </article>
