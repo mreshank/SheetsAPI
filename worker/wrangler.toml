@@ -23,6 +23,6 @@ DASHBOARD_URL = "https://sheets.mreshank.com"
 #   ENCRYPTION_KEY       — 64-hex-char (32-byte) random string; used for AES-GCM on refresh tokens
 
 [[d1_databases]]
-binding = "sheetsapi"
+binding = "DB"
 database_name = "sheetsapi"
 database_id = "29b670fc-1192-45f5-b491-9a0240ceb15c"

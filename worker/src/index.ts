@@ -18,7 +18,7 @@ import { applyQuery, formatResponse, parseQuery } from "./query";
 // The Worker is mounted at sheets.mreshank.com/api/* via a Cloudflare route.
 // Cloudflare matches Worker routes before Pages, so everything else on
 // sheets.mreshank.com falls through to the Pages (SvelteKit) deployment.
-const app = new Hono<{ Bindings: Env }>().basePath("/api");
+const app = new Hono<{ Bindings: Env }>({ strict: false }).basePath("/api");
 
 app.use("*", cors({ origin: "*", allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"] }));
 
