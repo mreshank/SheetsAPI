@@ -5,10 +5,14 @@ var API_BASE = 'https://sheets.mreshank.com';
 var DASHBOARD_URL = 'https://sheets.mreshank.com';
 
 function onOpen(e) {
-  SpreadsheetApp.getUi()
-    .createAddonMenu()
-    .addItem('Open SheetsAPI', 'showSidebar')
-    .addToUi();
+  try {
+    SpreadsheetApp.getUi()
+      .createAddonMenu()
+      .addItem('Open SheetsAPI', 'showSidebar')
+      .addToUi();
+  } catch (error) {
+    console.warn('Note: getUi() cannot be called when running directly from the Apps Script editor.');
+  }
 }
 
 function onInstall(e) {
