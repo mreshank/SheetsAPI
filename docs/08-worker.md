@@ -122,7 +122,7 @@ wrangler dev
 Local URL: `http://127.0.0.1:8787`
 
 OAuth won't work against localhost (Google requires a real HTTPS redirect URI). Two options:
-1. Point a test hostname like `dev.sheets.mreshank.com` at the local Worker via Cloudflare Tunnel.
+1. Point a test hostname like `dev.sheetsapi.gkit.mreshank.com` at the local Worker via Cloudflare Tunnel.
 2. Use `wrangler dev --remote` for a cloud dev Worker.
 
 ## Testing (roadmap)

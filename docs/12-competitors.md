@@ -77,7 +77,7 @@ SheetsAPI is positioned as a **free, open, full-featured replacement** for the p
 
 1. Sign in to SheetsAPI with Google.
 2. In the dashboard, paste your Google Sheet URL → **Add**.
-3. Copy your new endpoint URL (shape matches SheetDB's pattern closely; you may need to swap `https://sheetdb.io/api/v1/<id>` → `https://sheets.mreshank.com/api/spreadsheets/<userKey>/<sheetName>`).
+3. Copy your new endpoint URL (shape matches SheetDB's pattern closely; you may need to swap `https://sheetdb.io/api/v1/<id>` → `https://sheetsapi.gkit.mreshank.com/api/spreadsheets/<userKey>/<sheetName>`).
 4. Find-and-replace the base URL in your application code.
 5. **Optional**: create an API key in SheetsAPI and switch from SheetDB's auth header to `Authorization: Bearer sk_...`.
 6. Verify by running a sample GET. If returns shape matches, you're done.

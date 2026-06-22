@@ -7,7 +7,7 @@
                             │   User's browser            │
                             │                             │
                             │   ┌─────────────────────┐   │
-                            │   │ sheets.mreshank.com    │   │
+                            │   │ sheetsapi.gkit.mreshank.com    │   │
                             │   │ SvelteKit SPA       │   │
                             │   │ (Cloudflare Pages)  │   │
                             │   └──────────┬──────────┘   │
@@ -17,7 +17,7 @@
                       │ CORS + x-user-key  │                     │
                       ▼                    ▼                     │
           ┌─────────────────────────────────────────┐            │
-          │   sheets.mreshank.com                   │            │
+          │   sheetsapi.gkit.mreshank.com                   │            │
           │   Cloudflare Worker (Hono)              │            │
           │                                         │            │
           │   ┌─────────────────────────────────┐   │            │
@@ -82,13 +82,13 @@ Handles:
 
 ## Data flow: first-time user
 
-1. User clicks **"Connect Google Sheets"** on `sheets.mreshank.com`.
-2. Dashboard opens `sheets.mreshank.com/api/oauth/start?return_to=...`.
+1. User clicks **"Connect Google Sheets"** on `sheetsapi.gkit.mreshank.com`.
+2. Dashboard opens `sheetsapi.gkit.mreshank.com/api/oauth/start?return_to=...`.
 3. Worker generates `state`, persists in `oauth_states`, redirects to `accounts.google.com/o/oauth2/v2/auth`.
-4. User consents → Google redirects to `sheets.mreshank.com/api/oauth/callback?code=...&state=...`.
+4. User consents → Google redirects to `sheetsapi.gkit.mreshank.com/api/oauth/callback?code=...&state=...`.
 5. Worker exchanges code → receives `refresh_token` + `id_token`.
 6. Worker decodes `id_token.sub` + email, AES-GCM encrypts refresh token, inserts/updates `users` row.
-7. Worker redirects to `sheets.mreshank.com/app?userKey=...&email=...`.
+7. Worker redirects to `sheetsapi.gkit.mreshank.com/app?userKey=...&email=...`.
 8. Dashboard writes `{userKey, email}` to `localStorage`.
 
 ## Data flow: API request

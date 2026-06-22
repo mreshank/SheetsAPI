@@ -1,6 +1,6 @@
 # SheetsAPI Dashboard
 
-SvelteKit 5 + Tailwind v4 static site. Hosts `sheets.mreshank.com` — marketing pages, docs, interactive tools, and the authenticated dashboard where users connect Google Sheets, copy endpoint URLs, and manage API keys.
+SvelteKit 5 + Tailwind v4 static site. Hosts `sheetsapi.gkit.mreshank.com` — marketing pages, docs, interactive tools, and the authenticated dashboard where users connect Google Sheets, copy endpoint URLs, and manage API keys.
 
 ## Stack
 
@@ -38,7 +38,7 @@ npm run build              # generates ./build
 npm run deploy             # wrangler pages deploy build --project-name=sheetsapi-app
 ```
 
-Attach the custom domain in Cloudflare dashboard → Pages → Custom domains → `sheets.mreshank.com`.
+Attach the custom domain in Cloudflare dashboard → Pages → Custom domains → `sheetsapi.gkit.mreshank.com`.
 
 ## Architecture
 

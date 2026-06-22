@@ -1,6 +1,6 @@
 # 04 — REST API Reference
 
-Base URL: `https://sheets.mreshank.com`
+Base URL: `https://sheetsapi.gkit.mreshank.com`
 
 All endpoints return `application/json; charset=utf-8`. All requests may use `Content-Type: application/json`.
 
@@ -42,7 +42,7 @@ List all rows from the given tab as JSON objects, keyed by the header row.
 **Example**
 
 ```bash
-curl 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads?limit=10&sort=-age'
+curl 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/abc123/leads?limit=10&sort=-age'
 ```
 
 ```json
@@ -57,7 +57,7 @@ curl 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads?limit=10&sort=-a
 Retrieve a single row by its 1-based data index.
 
 ```bash
-curl 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads/1'
+curl 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/abc123/leads/1'
 ```
 
 ```json
@@ -73,7 +73,7 @@ curl 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads/1'
 Append one or more rows. Body can be a single object or an array of objects.
 
 ```bash
-curl -X POST 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads' \
+curl -X POST 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/abc123/leads' \
   -H 'content-type: application/json' \
   -d '[{"name":"Grace","age":"42","email":"grace@..."}]'
 ```
@@ -92,7 +92,7 @@ curl -X POST 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads' \
 Replace the entire row at 1-based index. Body is a single object.
 
 ```bash
-curl -X PUT 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads/1' \
+curl -X PUT 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/abc123/leads/1' \
   -H 'content-type: application/json' \
   -d '{"name":"Ada Lovelace","age":"37","email":"ada@..."}'
 ```
@@ -106,7 +106,7 @@ curl -X PUT 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads/1' \
 Remove a row. Shifts remaining rows up.
 
 ```bash
-curl -X DELETE 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads/1'
+curl -X DELETE 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/abc123/leads/1'
 ```
 
 ```json

@@ -10,7 +10,7 @@ SheetsAPI uses a **two-layer auth model**:
 ### Flow
 
 ```
-User → Dashboard (sheets.mreshank.com)
+User → Dashboard (sheetsapi.gkit.mreshank.com)
   └─ click "Connect Google Sheets"
          │
          ▼
@@ -18,7 +18,7 @@ Worker /oauth/start
   └─ creates nonce `state`, stores in D1.oauth_states
   └─ 302 → accounts.google.com/o/oauth2/v2/auth
          ?client_id=...
-         &redirect_uri=https://sheets.mreshank.com/api/oauth/callback
+         &redirect_uri=https://sheetsapi.gkit.mreshank.com/api/oauth/callback
          &response_type=code
          &access_type=offline            ← gets us a refresh token
          &prompt=consent                 ← forces refresh token on every consent
@@ -71,7 +71,7 @@ Two paths:
 ### Consent screen verification
 
 To ship publicly you must submit:
-1. App domain list (sheets.mreshank.com, sheets.mreshank.com)
+1. App domain list (sheetsapi.gkit.mreshank.com, sheetsapi.gkit.mreshank.com)
 2. Privacy policy URL
 3. Terms URL
 4. Scope justifications (why you need `spreadsheets` and `drive.file`)

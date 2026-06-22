@@ -9,21 +9,21 @@
 Sign in with Google → paste a Google Sheet URL → get this:
 
 ```
-GET    https://sheets.mreshank.com/api/spreadsheets/{userKey}/{sheetName}
-GET    https://sheets.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
-POST   https://sheets.mreshank.com/api/spreadsheets/{userKey}/{sheetName}
-PUT    https://sheets.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
-DELETE https://sheets.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
+GET    https://sheetsapi.gkit.mreshank.com/api/spreadsheets/{userKey}/{sheetName}
+GET    https://sheetsapi.gkit.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
+POST   https://sheetsapi.gkit.mreshank.com/api/spreadsheets/{userKey}/{sheetName}
+PUT    https://sheetsapi.gkit.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
+DELETE https://sheetsapi.gkit.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
 ```
 
-First row of every tab = JSON keys. CRUD just works. CORS enabled. Free tier covers ~3M requests/month.
+First row of every tab = JSON keys. CRUD just works. CORS enabled. Free while in beta — it runs entirely on Cloudflare's free tier (Workers allow 100k requests/day).
 
 ## Architecture
 
 ```
 SheetsAPI/
-├── worker/          Cloudflare Worker — REST API + OAuth backend (sheets.mreshank.com)
-├── dashboard/       SvelteKit 5 + Tailwind v4 — marketing + user dashboard (sheets.mreshank.com)
+├── worker/          Cloudflare Worker — REST API + OAuth backend (sheetsapi.gkit.mreshank.com)
+├── dashboard/       SvelteKit 5 + Tailwind v4 — marketing + user dashboard (sheetsapi.gkit.mreshank.com)
 ├── addon/           Google Apps Script — Extensions → SheetsAPI menu in every Sheet
 ├── docs/            18 files of product + engineering documentation
 ├── SETUP.md         End-to-end production setup
@@ -34,7 +34,7 @@ Three independently deployable pieces, one unified product.
 
 ## Quick start (for users)
 
-1. Visit [`sheets.mreshank.com`](https://sheets.mreshank.com)
+1. Visit [`sheetsapi.gkit.mreshank.com`](https://sheetsapi.gkit.mreshank.com)
 2. Click **Connect Google Sheets**, sign in
 3. Paste your sheet URL
 4. Copy the endpoint URL, `curl` it, done
@@ -82,7 +82,7 @@ npm run deploy
 
 |                            | SheetsAPI | SheetDB | Sheety | Sheetson | APISpreadsheets |
 | -------------------------- | :-------: | :-----: | :----: | :------: | :-------------: |
-| Free req/month             | 100k~1M       | 500     | 6k     | 500 rows | 7.5k            |
+| Free req/day               | 100k (CF)     | 500     | 6k     | 500 rows | 7.5k            |
 | 100k req/mo cost           | **$0**    | $29     | $29    | $24      | $50             |
 | Open source                | ✅        | ❌       | ❌     | ❌        | ❌              |
 | Self-hostable              | ✅        | ❌       | ❌     | ❌        | ❌              |

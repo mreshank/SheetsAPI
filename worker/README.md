@@ -1,6 +1,6 @@
 # SheetsAPI Worker
 
-Cloudflare Worker exposing `sheets.mreshank.com` with OAuth + CRUD endpoints.
+Cloudflare Worker exposing `sheetsapi.gkit.mreshank.com` with OAuth + CRUD endpoints.
 
 ## Setup
 
@@ -22,7 +22,7 @@ npx wrangler secret put ENCRYPTION_KEY        # 64 hex chars (32 random bytes)
 
 # Update wrangler.toml vars
 #   GOOGLE_CLIENT_ID       — your OAuth client ID
-#   OAUTH_REDIRECT_URI     — https://sheets.mreshank.com/api/oauth/callback
+#   OAUTH_REDIRECT_URI     — https://sheetsapi.gkit.mreshank.com/api/oauth/callback
 #   DASHBOARD_URL          — where to redirect after successful OAuth
 
 # Deploy
@@ -37,7 +37,7 @@ npm run deploy
    - `https://www.googleapis.com/auth/spreadsheets`
    - `https://www.googleapis.com/auth/drive.file`
 3. Credentials → Create OAuth 2.0 Client ID → Web application
-   - Authorized redirect URI: `https://sheets.mreshank.com/api/oauth/callback`
+   - Authorized redirect URI: `https://sheetsapi.gkit.mreshank.com/api/oauth/callback`
 4. Copy Client ID to `wrangler.toml`, Client Secret into `wrangler secret`
 
 Until you submit for verification, only test users you've added can authorize.

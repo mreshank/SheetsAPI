@@ -42,7 +42,7 @@ Crucially, the Add-on does **not** hold or use our Worker's OAuth. It reads the 
 
 `Sidebar.html`:
 1. Reads `sheetsapi_userKey` from `localStorage`.
-2. **If missing**: shows "Open Dashboard to connect this sheet" with a deep link to `sheets.mreshank.com/connect?spreadsheet_id=<id>`.
+2. **If missing**: shows "Open Dashboard to connect this sheet" with a deep link to `sheetsapi.gkit.mreshank.com/connect?spreadsheet_id=<id>`.
 3. **If present**: renders a `<select>` populated with all tab names, plus:
    - The live endpoint URL for `(userKey, selectedTab)`
    - Copy URL / Copy curl buttons
@@ -52,8 +52,8 @@ Because Apps Script sidebars live in a sandboxed iframe, `localStorage` is isola
 ## Deep link from CardService
 
 `onHomepage` produces a card with:
-- **Open Dashboard** → `sheets.mreshank.com`
-- **Connect this sheet** → `sheets.mreshank.com/connect?spreadsheet_id=<active spreadsheet ID>`
+- **Open Dashboard** → `sheetsapi.gkit.mreshank.com`
+- **Connect this sheet** → `sheetsapi.gkit.mreshank.com/connect?spreadsheet_id=<active spreadsheet ID>`
 
 That second URL pushes the user into the `/connect` route which (after OAuth if needed) calls `POST /me/spreadsheets` with the provided ID and marks it default.
 

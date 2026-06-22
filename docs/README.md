@@ -37,7 +37,7 @@ Complete technical and product documentation for SheetsAPI — a free, open, OAu
 ┌──────────────────────┐     ┌─────────────────────┐     ┌────────────────────┐
 │  Google Sheets       │◀───▶│  Cloudflare Worker  │◀───▶│  SvelteKit         │
 │  (user's data)       │     │  sheets.mreshank    │     │  Dashboard + Site  │
-│                      │     │  .com               │     │  sheets.mreshank.com  │
+│                      │     │  .com               │     │  sheetsapi.gkit.mreshank.com  │
 └──────────────────────┘     └─────────────────────┘     └────────────────────┘
           ▲                           ▲
           │                           │

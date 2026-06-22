@@ -1,6 +1,6 @@
 # SheetsAPI — Full Setup Guide
 
-End-to-end instructions to take this repo from zero to production on a single subdomain (`sheets.mreshank.com`), on a $0/month budget for most workloads.
+End-to-end instructions to take this repo from zero to production on a single subdomain (`sheetsapi.gkit.mreshank.com`), on a $0/month budget for most workloads.
 
 **Time budget**: ~45 minutes of active work + ~2–4 weeks waiting on Google OAuth verification (only needed for public launch; unverified apps work fine for personal/team use with a test-user allowlist).
 
@@ -9,7 +9,7 @@ End-to-end instructions to take this repo from zero to production on a single su
 ## 1. Architecture — one subdomain, two services
 
 ```
-              sheets.mreshank.com
+              sheetsapi.gkit.mreshank.com
                       │
         ┌─────────────┴─────────────┐
         │                           │
@@ -25,7 +25,7 @@ End-to-end instructions to take this repo from zero to production on a single su
 
 Cloudflare matches **Worker routes before Pages**, so any request to `/api/*` hits the Worker and everything else (landing page, docs, `/app`, `/connect`, deep links) falls through to the Pages deployment.
 
-**Why this matters**: you only need `sheets.mreshank.com` — no separate `app.` or `api.` subdomains.
+**Why this matters**: you only need `sheetsapi.gkit.mreshank.com` — no separate `app.` or `api.` subdomains.
 
 ---
 
@@ -74,9 +74,9 @@ APIs & Services → OAuth consent screen → **External** → Create.
 | App name           | SheetsAPI                                   |
 | User support email | `your-email@mreshank.com`                   |
 | App logo           | Upload a 120×120 PNG                        |
-| App home page      | `https://sheets.mreshank.com`               |
-| Privacy policy     | `https://sheets.mreshank.com/legal/privacy` |
-| Terms of service   | `https://sheets.mreshank.com/legal/terms`   |
+| App home page      | `https://sheetsapi.gkit.mreshank.com`               |
+| Privacy policy     | `https://sheetsapi.gkit.mreshank.com/legal/privacy` |
+| Terms of service   | `https://sheetsapi.gkit.mreshank.com/legal/terms`   |
 | Authorized domains | `mreshank.com`                              |
 | Developer contact  | `your-email@mreshank.com`                   |
 
@@ -91,8 +91,8 @@ Credentials → Create Credentials → **OAuth client ID** → Web application.
 | Field                         | Value                                                           |
 | ----------------------------- | --------------------------------------------------------------- |
 | Name                          | SheetsAPI Web                                                   |
-| Authorized JavaScript origins | `https://sheets.mreshank.com`                                   |
-| Authorized redirect URIs      | `https://sheets.mreshank.com/api/oauth/callback` ⚠️ note `/api` |
+| Authorized JavaScript origins | `https://sheetsapi.gkit.mreshank.com`                                   |
+| Authorized redirect URIs      | `https://sheetsapi.gkit.mreshank.com/api/oauth/callback` ⚠️ note `/api` |
 
 Copy **Client ID** and **Client Secret** — used in section 5.
 
@@ -123,13 +123,13 @@ Already configured for the single-subdomain model. Verify these values:
 
 ```toml
 routes = [
-  { pattern = "sheets.mreshank.com/api/*", zone_name = "mreshank.com" }
+  { pattern = "sheetsapi.gkit.mreshank.com/api/*", zone_name = "mreshank.com" }
 ]
 
 [vars]
 GOOGLE_CLIENT_ID    = "<paste-client-id>.apps.googleusercontent.com"
-OAUTH_REDIRECT_URI  = "https://sheets.mreshank.com/api/oauth/callback"
-DASHBOARD_URL       = "https://sheets.mreshank.com"
+OAUTH_REDIRECT_URI  = "https://sheetsapi.gkit.mreshank.com/api/oauth/callback"
+DASHBOARD_URL       = "https://sheetsapi.gkit.mreshank.com"
 ```
 
 **Critical**: the route is pattern-based, not `custom_domain = true`. A custom-domain route owns the entire hostname and would block Pages.
@@ -147,12 +147,12 @@ wrangler secret put ENCRYPTION_KEY             # openssl rand -hex 32
 wrangler deploy
 ```
 
-Cloudflare creates the route `sheets.mreshank.com/api/*` automatically. No custom-domain setup on the Worker — Pages owns the hostname (next section).
+Cloudflare creates the route `sheetsapi.gkit.mreshank.com/api/*` automatically. No custom-domain setup on the Worker — Pages owns the hostname (next section).
 
 ### 5.6 Smoke test
 
 ```bash
-curl https://sheets.mreshank.com/api/
+curl https://sheetsapi.gkit.mreshank.com/api/
 # -> { "name": "SheetsAPI", "docs": "...", "endpoints": { ... } }
 ```
 
@@ -168,7 +168,7 @@ curl https://sheets.mreshank.com/api/
 cd ../dashboard
 npm install
 cp .env.example .env
-# .env already points at https://sheets.mreshank.com
+# .env already points at https://sheetsapi.gkit.mreshank.com
 npm run build
 ```
 
@@ -183,19 +183,19 @@ Cloudflare prints a `*.pages.dev` URL — sanity check it loads.
 
 ### 6.3 Attach the custom domain
 
-Cloudflare dashboard → **Workers & Pages → sheetsapi-app → Custom domains → Set up a custom domain** → `sheets.mreshank.com`.
+Cloudflare dashboard → **Workers & Pages → sheetsapi-app → Custom domains → Set up a custom domain** → `sheetsapi.gkit.mreshank.com`.
 
 Cloudflare provisions the cert and adds a CNAME automatically.
 
-Because the Worker route (`/api/*`) is narrower and Workers take precedence, `sheets.mreshank.com/api/*` still hits the Worker while everything else now serves the Pages deployment.
+Because the Worker route (`/api/*`) is narrower and Workers take precedence, `sheetsapi.gkit.mreshank.com/api/*` still hits the Worker while everything else now serves the Pages deployment.
 
 ### 6.4 Smoke test
 
-- `https://sheets.mreshank.com/` → landing page
-- `https://sheets.mreshank.com/docs` → docs site
-- `https://sheets.mreshank.com/sitemap.xml` → lists 60+ URLs
-- `https://sheets.mreshank.com/api/` → Worker JSON (still!)
-- `https://sheets.mreshank.com/compare/sheetdb-alternative` → SPA-routed page
+- `https://sheetsapi.gkit.mreshank.com/` → landing page
+- `https://sheetsapi.gkit.mreshank.com/docs` → docs site
+- `https://sheetsapi.gkit.mreshank.com/sitemap.xml` → lists 60+ URLs
+- `https://sheetsapi.gkit.mreshank.com/api/` → Worker JSON (still!)
+- `https://sheetsapi.gkit.mreshank.com/compare/sheetdb-alternative` → SPA-routed page
 
 ---
 
@@ -207,7 +207,7 @@ Because the Worker route (`/api/*`) is narrower and Workers take precedence, `sh
 2. Project Settings → check **"Show `appsscript.json` manifest file in editor"**.
 3. Replace default files with the three in `addon/`:
    - `appsscript.json`
-   - `Code.gs` — `API_BASE` and `DASHBOARD_URL` already point at `https://sheets.mreshank.com`
+   - `Code.gs` — `API_BASE` and `DASHBOARD_URL` already point at `https://sheetsapi.gkit.mreshank.com`
    - `Sidebar.html`
 
 ### 7.2 Link to your GCP project
@@ -218,7 +218,7 @@ In Google Cloud Console, enable the **Apps Script API**.
 
 ### 7.3 Test
 
-Inside any Google Sheet → **Extensions → SheetsAPI → Open**. Sidebar appears. If `localStorage` is empty, it links back to `sheets.mreshank.com/connect` for first-time setup.
+Inside any Google Sheet → **Extensions → SheetsAPI → Open**. Sidebar appears. If `localStorage` is empty, it links back to `sheetsapi.gkit.mreshank.com/connect` for first-time setup.
 
 ### 7.4 Publish to Workspace Marketplace (optional)
 
@@ -245,8 +245,8 @@ Turnaround: 2–4 weeks. Until verified, users outside your allowlist see a "thi
 | Host                        | Type         | Managed by                         |
 | --------------------------- | ------------ | ---------------------------------- |
 | `mreshank.com`              | (your setup) | —                                  |
-| `sheets.mreshank.com`       | CNAME        | Cloudflare Pages custom domain     |
-| `sheets.mreshank.com/api/*` | Worker route | Cloudflare Workers (same hostname) |
+| `sheetsapi.gkit.mreshank.com`       | CNAME        | Cloudflare Pages custom domain     |
+| `sheetsapi.gkit.mreshank.com/api/*` | Worker route | Cloudflare Workers (same hostname) |
 
 One subdomain, one CNAME, one Worker route.
 
@@ -281,8 +281,8 @@ npm run dev
 
 ## 11. Post-deploy checklist
 
-- [ ] `https://sheets.mreshank.com/` landing page loads
-- [ ] `https://sheets.mreshank.com/api/` returns the discovery JSON
+- [ ] `https://sheetsapi.gkit.mreshank.com/` landing page loads
+- [ ] `https://sheetsapi.gkit.mreshank.com/api/` returns the discovery JSON
 - [ ] "Connect Google Sheets" → consent screen shows your app name + logo
 - [ ] Callback lands you on `/app?userKey=…&email=…` → strips params to `/app`
 - [ ] Dashboard shows your userKey, spreadsheets section, API keys section
@@ -314,7 +314,7 @@ Realistically: **$0/month** until you're past 100k API requests/day.
 
 ## 13. Troubleshooting
 
-**Pages serves up when I hit `/api/`** — your Worker route is `custom_domain = true` or too wide. Change to `pattern = "sheets.mreshank.com/api/*"` in `wrangler.toml` and `wrangler deploy`.
+**Pages serves up when I hit `/api/`** — your Worker route is `custom_domain = true` or too wide. Change to `pattern = "sheetsapi.gkit.mreshank.com/api/*"` in `wrangler.toml` and `wrangler deploy`.
 
 **Worker serves up when I hit `/docs`** — your Worker route is too wide. Narrow to `/api/*` only.
 

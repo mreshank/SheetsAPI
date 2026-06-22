@@ -35,7 +35,7 @@ export async function encrypt(plaintext, hexKey) {
 
 ### In transit
 
-- All origins (`sheets.mreshank.com`, `sheets.mreshank.com`) force HTTPS via Cloudflare universal SSL.
+- All origins (`sheetsapi.gkit.mreshank.com`, `sheetsapi.gkit.mreshank.com`) force HTTPS via Cloudflare universal SSL.
 - Recommend enabling HSTS with 1-year max-age and `includeSubdomains; preload`.
 - TLS 1.2 minimum, 1.3 preferred.
 

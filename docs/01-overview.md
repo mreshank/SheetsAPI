@@ -5,11 +5,11 @@
 SheetsAPI turns any Google Sheet into a production-grade JSON REST API. Sign in with Google, register a spreadsheet, and get immediate CRUD endpoints:
 
 ```
-GET    https://sheets.mreshank.com/api/spreadsheets/{userKey}/{sheetName}
-GET    https://sheets.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
-POST   https://sheets.mreshank.com/api/spreadsheets/{userKey}/{sheetName}
-PUT    https://sheets.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
-DELETE https://sheets.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
+GET    https://sheetsapi.gkit.mreshank.com/api/spreadsheets/{userKey}/{sheetName}
+GET    https://sheetsapi.gkit.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
+POST   https://sheetsapi.gkit.mreshank.com/api/spreadsheets/{userKey}/{sheetName}
+PUT    https://sheetsapi.gkit.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
+DELETE https://sheetsapi.gkit.mreshank.com/api/spreadsheets/{userKey}/{sheetName}/{row}
 ```
 
 The first row of every tab is treated as the JSON schema. Values are returned as an array of objects.
@@ -51,8 +51,8 @@ See [12 — Competitors](./12-competitors.md) for feature matrix and migration g
 
 | Piece      | Tech                    | URL                    | Purpose                                    |
 | ---------- | ----------------------- | ---------------------- | ------------------------------------------ |
-| Worker     | Cloudflare Workers + D1 | sheets.mreshank.com    | REST API + OAuth backend                   |
-| Dashboard  | SvelteKit + Tailwind v4 | sheets.mreshank.com       | Marketing site + user control plane        |
+| Worker     | Cloudflare Workers + D1 | sheetsapi.gkit.mreshank.com    | REST API + OAuth backend                   |
+| Dashboard  | SvelteKit + Tailwind v4 | sheetsapi.gkit.mreshank.com       | Marketing site + user control plane        |
 | Add-on     | Google Apps Script      | Marketplace listing    | `Extensions → SheetsAPI` inside any Sheet  |
 
 See [02 — Architecture](./02-architecture.md).

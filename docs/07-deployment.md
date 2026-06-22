@@ -1,6 +1,6 @@
 # 07 — Deployment
 
-End-to-end production setup for `sheets.mreshank.com` (Worker) + `sheets.mreshank.com` (Dashboard) + Marketplace Add-on.
+End-to-end production setup for `sheetsapi.gkit.mreshank.com` (Worker) + `sheetsapi.gkit.mreshank.com` (Dashboard) + Marketplace Add-on.
 
 Budget: **$0/month** covers nearly all expected usage on free tiers.
 
@@ -27,8 +27,8 @@ Budget: **$0/month** covers nearly all expected usage on free tiers.
    - Scopes: `openid`, `email`, `https://www.googleapis.com/auth/spreadsheets`, `https://www.googleapis.com/auth/drive.file`
    - Test users: add your email(s) while unverified
 4. **Credentials → Create OAuth Client ID → Web application**:
-   - Authorized JavaScript origins: `https://sheets.mreshank.com`
-   - Authorized redirect URIs: `https://sheets.mreshank.com/api/oauth/callback`
+   - Authorized JavaScript origins: `https://sheetsapi.gkit.mreshank.com`
+   - Authorized redirect URIs: `https://sheetsapi.gkit.mreshank.com/api/oauth/callback`
 5. Copy **Client ID** and **Client Secret**
 
 ## Step 2 — Worker setup
@@ -46,8 +46,8 @@ wrangler d1 execute sheetsapi --file=./schema.sql --remote
 
 # Set vars in wrangler.toml
 #   GOOGLE_CLIENT_ID   = "<from step 1.5>"
-#   OAUTH_REDIRECT_URI = "https://sheets.mreshank.com/api/oauth/callback"
-#   DASHBOARD_URL      = "https://sheets.mreshank.com"
+#   OAUTH_REDIRECT_URI = "https://sheetsapi.gkit.mreshank.com/api/oauth/callback"
+#   DASHBOARD_URL      = "https://sheetsapi.gkit.mreshank.com"
 
 # Set secrets
 wrangler secret put GOOGLE_CLIENT_SECRET        # paste from step 1.5
@@ -60,7 +60,7 @@ wrangler deploy
 ### Attach custom domain
 
 1. Cloudflare dashboard → Workers & Pages → your worker → **Settings → Triggers → Custom Domains**
-2. Add `sheets.mreshank.com`
+2. Add `sheetsapi.gkit.mreshank.com`
 3. Cloudflare automatically provisions the cert and DNS
 
 ## Step 3 — Dashboard deploy
@@ -68,14 +68,14 @@ wrangler deploy
 ```bash
 cd dashboard
 npm install
-echo "VITE_API_BASE=https://sheets.mreshank.com" > .env
+echo "VITE_API_BASE=https://sheetsapi.gkit.mreshank.com" > .env
 npm run build
 
 # First deploy
 wrangler pages deploy build --project-name=sheetsapi-app
 
 # Attach custom domain
-# Cloudflare dashboard → Pages → sheetsapi-app → Custom domains → sheets.mreshank.com
+# Cloudflare dashboard → Pages → sheetsapi-app → Custom domains → sheetsapi.gkit.mreshank.com
 ```
 
 ## Step 4 — Add-on publish
@@ -96,7 +96,7 @@ For public distribution:
 
 Go through as an end-user:
 
-- [ ] Visit `https://sheets.mreshank.com` — landing page loads
+- [ ] Visit `https://sheetsapi.gkit.mreshank.com` — landing page loads
 - [ ] Click **Connect Google Sheets** → consent screen shows "SheetsAPI" with your logo
 - [ ] After consent, land on `/app` with your userKey displayed
 - [ ] Paste a Google Sheet URL → "Add" succeeds
@@ -112,8 +112,8 @@ Go through as an end-user:
 | Record                | Type  | Target                                      |
 | --------------------- | ----- | ------------------------------------------- |
 | `mreshank.com`        | —     | (your existing setup)                       |
-| `sheets.mreshank.com` | CNAME | managed by Cloudflare Workers custom domain |
-| `sheets.mreshank.com` | CNAME | managed by Cloudflare Pages custom domain   |
+| `sheetsapi.gkit.mreshank.com` | CNAME | managed by Cloudflare Workers custom domain |
+| `sheetsapi.gkit.mreshank.com` | CNAME | managed by Cloudflare Pages custom domain   |
 
 Both get automatic Cloudflare-issued certs.
 
