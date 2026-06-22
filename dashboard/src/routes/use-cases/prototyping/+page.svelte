@@ -6,7 +6,7 @@
 2  | Alan    | active | alan@...`;
 
   const code = `// Day 1 → ship with SheetsAPI
-fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/users')
+fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/users')
 
 // Day 60 → migrate to Postgres
 // Export your sheet as CSV, COPY into postgres, swap base URL`;

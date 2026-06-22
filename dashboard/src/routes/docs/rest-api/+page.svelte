@@ -8,7 +8,7 @@
   description="All CRUD endpoints, request formats, and response shapes for SheetsAPI."
 >
   <h2 class="text-2xl font-semibold mt-10">Base URL</h2>
-  <pre class="code mt-2">https://sheets.mreshank.com</pre>
+  <pre class="code mt-2">https://sheetsapi.gkit.mreshank.com</pre>
 
   <h2 class="text-2xl font-semibold mt-10">URL shape</h2>
   <pre class="code mt-2">{`/api/spreadsheets/{userKey}/{sheetName}         # list / append

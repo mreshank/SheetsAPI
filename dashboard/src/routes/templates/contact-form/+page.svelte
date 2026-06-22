@@ -22,7 +22,7 @@
   const data = Object.fromEntries(new FormData(e.target));
   data.timestamp = new Date().toISOString();
   data.source = location.pathname;
-  await fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/submissions', {
+  await fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/submissions', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(data)

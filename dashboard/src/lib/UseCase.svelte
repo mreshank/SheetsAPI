@@ -11,9 +11,9 @@
   const canonical = `/use-cases/${slug}`;
   const schema = [
     breadcrumbSchema([
-      { name: 'Home', url: 'https://sheets.mreshank.com/' },
-      { name: 'Use cases', url: 'https://sheets.mreshank.com/use-cases' },
-      { name: title, url: `https://sheets.mreshank.com${canonical}` }
+      { name: 'Home', url: 'https://sheetsapi.gkit.mreshank.com/' },
+      { name: 'Use cases', url: 'https://sheetsapi.gkit.mreshank.com/use-cases' },
+      { name: title, url: `https://sheetsapi.gkit.mreshank.com${canonical}` }
     ]),
     ...(faqs.length ? [faqSchema(faqs)] : [])
   ];

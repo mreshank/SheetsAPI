@@ -13,7 +13,7 @@
   const sampleRow = { rating: '5', category: 'praise', message: 'Love the dashboard redesign', user_id: 'u_123', page: '/app', submitted_at: '2026-04-21T10:00:00Z' };
 
   const code = `// Submit feedback
-await fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/feedback', {
+await fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/feedback', {
   method: 'POST',
   headers: { 'content-type': 'application/json' },
   body: JSON.stringify({ rating, category, message, page: location.pathname, submitted_at: new Date().toISOString() })

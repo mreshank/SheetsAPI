@@ -24,7 +24,7 @@
   <h2 class="text-2xl font-semibold mt-8">Migration is a find-and-replace</h2>
   <p>Both services return arrays of objects keyed by the header row. Swap the base URL, and you're done.</p>
   <pre class="code">{`- https://sheetdb.io/api/v1/<id>
-+ https://sheets.mreshank.com/api/spreadsheets/<userKey>/<sheetName>`}</pre>
++ https://sheetsapi.gkit.mreshank.com/api/spreadsheets/<userKey>/<sheetName>`}</pre>
   <p>For <code>/search</code> endpoints, switch to our <code>?search=field:value</code> query parameter. <a href="/compare/sheetdb-alternative" style="color:rgba(255,255,255,0.7);text-decoration:underline;">Full migration guide</a>.</p>
 
   <h2 class="text-2xl font-semibold mt-8">Is there a catch?</h2>

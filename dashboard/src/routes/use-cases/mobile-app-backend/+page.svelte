@@ -7,7 +7,7 @@
 
   const code = `// React Native / iOS / Android
 const r = await fetch(
-  'https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/content?search=published:true'
+  'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/content?search=published:true'
 );
 const posts = await r.json();
 setPosts(posts);`;

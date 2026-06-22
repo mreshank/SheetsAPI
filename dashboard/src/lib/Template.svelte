@@ -12,9 +12,9 @@
   const canonical = `/templates/${slug}`;
   const schema = [
     breadcrumbSchema([
-      { name: 'Home', url: 'https://sheets.mreshank.com/' },
-      { name: 'Templates', url: 'https://sheets.mreshank.com/templates' },
-      { name: title, url: `https://sheets.mreshank.com${canonical}` }
+      { name: 'Home', url: 'https://sheetsapi.gkit.mreshank.com/' },
+      { name: 'Templates', url: 'https://sheetsapi.gkit.mreshank.com/templates' },
+      { name: title, url: `https://sheetsapi.gkit.mreshank.com${canonical}` }
     ])
   ];
 </script>

@@ -4,8 +4,8 @@ export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'SheetsAPI',
-  url: 'https://sheets.mreshank.com',
-  logo: 'https://sheets.mreshank.com/favicon.svg',
+  url: 'https://sheetsapi.gkit.mreshank.com',
+  logo: 'https://sheetsapi.gkit.mreshank.com/favicon.svg',
   sameAs: ['https://github.com/mreshank/sheetsapi']
 };
 
@@ -13,10 +13,10 @@ export const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'SheetsAPI',
-  url: 'https://sheets.mreshank.com',
+  url: 'https://sheetsapi.gkit.mreshank.com',
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://sheets.mreshank.com/docs?q={search_term_string}',
+    target: 'https://sheetsapi.gkit.mreshank.com/docs?q={search_term_string}',
     'query-input': 'required name=search_term_string'
   }
 };

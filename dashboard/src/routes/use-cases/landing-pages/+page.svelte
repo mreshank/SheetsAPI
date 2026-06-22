@@ -8,7 +8,7 @@ pricing_price | $29
 testimonial_1 | "Changed our workflow"`;
 
   const code = `// Fetch all copy at build time
-const r = await fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/copy');
+const r = await fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/copy');
 const copy = Object.fromEntries((await r.json()).map(row => [row.key, row.value]));
 // Use copy.hero_title, copy.pricing_price, etc.`;
 

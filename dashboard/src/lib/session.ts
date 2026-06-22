@@ -1,7 +1,19 @@
 import { writable, get } from 'svelte/store';
 import { browser } from '$app/environment';
 
-export type Session = { userKey: string; email: string } | null;
+/**
+ * Session shape, aligned with `GKitUser` from `@gkit/types` (the canonical
+ * GKit account model). `userKey` is the SheetsAPI-specific access key; the
+ * remaining fields mirror the shared GKit user so a future migration to the
+ * unified `.gkit.mreshank.com` SSO session is a drop-in.
+ */
+export type Session = {
+  userKey: string;
+  email: string;
+  name?: string;
+  image?: string;
+  googleId?: string;
+} | null;
 
 const KEY = 'sheetsapi_session';
 

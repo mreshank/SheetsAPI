@@ -2,10 +2,10 @@
   import Compare from '$lib/Compare.svelte';
 
   const matrix = [
-    { feature: 'URL style', us: 'sheets.mreshank.com/api/...', them: 'script.google.com/macros/s/.../exec' },
+    { feature: 'URL style', us: 'sheetsapi.gkit.mreshank.com/api/...', them: 'script.google.com/macros/s/.../exec' },
     { feature: 'REST semantics', us: 'Real GET/POST/PUT/DELETE', them: 'doGet/doPost only' },
     { feature: 'Rate limits', us: 'Google Sheets quota only', them: '20k UrlFetchApp calls/day' },
-    { feature: 'Custom domain', us: 'sheets.mreshank.com', them: 'No' },
+    { feature: 'Custom domain', us: 'sheetsapi.gkit.mreshank.com', them: 'No' },
     { feature: 'Cold start', us: 'None', them: '500ms–2s' },
     { feature: 'CORS', us: 'Yes, built-in', them: 'Workarounds required' },
     { feature: 'Output formats', us: 'JSON/CSV/TSV/XML/JSONP', them: 'Manual' },

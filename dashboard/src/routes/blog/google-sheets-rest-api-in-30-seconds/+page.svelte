@@ -17,26 +17,26 @@ Ada   | ada@example.com    | 2026-04-21
 Alan  | alan@example.com   | 2026-04-22</pre>
 
   <h2 class="text-2xl font-semibold mt-8">Step 2 — Connect to SheetsAPI</h2>
-  <p>Visit <a href="/app" style="color:rgba(255,255,255,0.7);text-decoration:underline;">sheets.mreshank.com</a> and sign in with Google. Paste your sheet's URL. Done — you now have a <code>userKey</code>.</p>
+  <p>Visit <a href="/app" style="color:rgba(255,255,255,0.7);text-decoration:underline;">sheetsapi.gkit.mreshank.com</a> and sign in with Google. Paste your sheet's URL. Done — you now have a <code>userKey</code>.</p>
 
   <h2 class="text-2xl font-semibold mt-8">Step 3 — Call the API</h2>
-  <p>Your endpoint is <code>https://sheets.mreshank.com/api/spreadsheets/&lt;userKey&gt;/&lt;tab&gt;</code>.</p>
+  <p>Your endpoint is <code>https://sheetsapi.gkit.mreshank.com/api/spreadsheets/&lt;userKey&gt;/&lt;tab&gt;</code>.</p>
 
   <h3 class="font-semibold mt-4">Read all rows</h3>
-  <pre class="code">curl 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads'</pre>
+  <pre class="code">curl 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/abc123/leads'</pre>
 
   <h3 class="font-semibold mt-4">Append a row</h3>
-  <pre class="code">{`curl -X POST 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads' \\
+  <pre class="code">{`curl -X POST 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/abc123/leads' \\
   -H 'content-type: application/json' \\
   -d '{"name":"Grace","email":"grace@example.com"}'`}</pre>
 
   <h3 class="font-semibold mt-4">Update row 1</h3>
-  <pre class="code">{`curl -X PUT 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads/1' \\
+  <pre class="code">{`curl -X PUT 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/abc123/leads/1' \\
   -H 'content-type: application/json' \\
   -d '{"name":"Ada Lovelace","email":"ada@example.com"}'`}</pre>
 
   <h3 class="font-semibold mt-4">Delete row 1</h3>
-  <pre class="code">curl -X DELETE 'https://sheets.mreshank.com/api/spreadsheets/abc123/leads/1'</pre>
+  <pre class="code">curl -X DELETE 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/abc123/leads/1'</pre>
 
   <h2 class="text-2xl font-semibold mt-8">That's it</h2>
   <p>From here: <a href="/docs/search-and-filters" style="color:rgba(255,255,255,0.7);text-decoration:underline;">search and filter</a>, <a href="/docs/authentication" style="color:rgba(255,255,255,0.7);text-decoration:underline;">secure with API keys</a>, or <a href="/use-cases" style="color:rgba(255,255,255,0.7);text-decoration:underline;">browse use cases</a> for inspiration.</p>

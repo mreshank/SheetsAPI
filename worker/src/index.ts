@@ -15,9 +15,9 @@ import {
 import { objectToRow, rowsToObjects } from "./rows";
 import { applyQuery, formatResponse, parseQuery } from "./query";
 
-// The Worker is mounted at sheets.mreshank.com/api/* via a Cloudflare route.
+// The Worker is mounted at sheetsapi.gkit.mreshank.com/api/* via a Cloudflare route.
 // Cloudflare matches Worker routes before Pages, so everything else on
-// sheets.mreshank.com falls through to the Pages (SvelteKit) deployment.
+// sheetsapi.gkit.mreshank.com falls through to the Pages (SvelteKit) deployment.
 const app = new Hono<{ Bindings: Env }>({ strict: false }).basePath("/api");
 
 app.use("*", cors({ origin: "*", allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"] }));
@@ -25,7 +25,7 @@ app.use("*", cors({ origin: "*", allowMethods: ["GET", "POST", "PUT", "DELETE", 
 app.get("/", (c) =>
   c.json({
     name: "SheetsAPI",
-    docs: "https://sheets.mreshank.com/docs",
+    docs: "https://sheetsapi.gkit.mreshank.com/docs",
     endpoints: {
       list: "GET /api/spreadsheets/:userKey/:sheetName",
       one: "GET /api/spreadsheets/:userKey/:sheetName/:row",

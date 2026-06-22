@@ -3,20 +3,20 @@ main = "src/index.ts"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-# Worker is mounted at /api/* on sheets.mreshank.com.
+# Worker is mounted at /api/* on sheetsapi.gkit.mreshank.com.
 # Cloudflare matches Worker routes before Pages, so everything else under
-# sheets.mreshank.com falls through to the Pages deployment (the SvelteKit site).
+# sheetsapi.gkit.mreshank.com falls through to the Pages deployment (the SvelteKit site).
 #
 # IMPORTANT: use a pattern-based route, NOT custom_domain = true.
 # custom_domain routes own the entire hostname and would block Pages.
 routes = [
-  { pattern = "sheets.mreshank.com/api/*", zone_name = "mreshank.com" }
+  { pattern = "sheetsapi.gkit.mreshank.com/api/*", zone_name = "mreshank.com" }
 ]
 
 [vars]
 GOOGLE_CLIENT_ID = "55831873124-f6sv6a7a4mbegfc8b5kl7tvu953pfp5n.apps.googleusercontent.com"
-OAUTH_REDIRECT_URI = "https://sheets.mreshank.com/api/oauth/callback"
-DASHBOARD_URL = "https://sheets.mreshank.com"
+OAUTH_REDIRECT_URI = "https://sheetsapi.gkit.mreshank.com/api/oauth/callback"
+DASHBOARD_URL = "https://sheetsapi.gkit.mreshank.com"
 
 # Secrets (set via `wrangler secret put`):
 #   GOOGLE_CLIENT_SECRET — OAuth client secret

@@ -6,7 +6,7 @@
 2  | Alan  | Acme      | alan@...    | contacted| 2500`;
 
   const code = `// Push new signup from landing page into CRM sheet
-await fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads', {
+await fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads', {
   method: 'POST',
   headers: { 'content-type': 'application/json' },
   body: JSON.stringify({ name, email, company, stage: 'new' })
@@ -14,7 +14,7 @@ await fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads', {
 
 // Read qualified leads for follow-up
 const r = await fetch(
-  'https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads?search_exact=stage:qualified'
+  'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads?search_exact=stage:qualified'
 );`;
 
   const faqs = [

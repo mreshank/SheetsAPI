@@ -14,7 +14,7 @@
     return JSON.stringify({
       openapi: '3.1.0',
       info: { title: `SheetsAPI — ${sheetName}`, version: '1.0.0' },
-      servers: [{ url: 'https://sheets.mreshank.com' }],
+      servers: [{ url: 'https://sheetsapi.gkit.mreshank.com' }],
       paths: {
         [`/api/spreadsheets/${userKey}/${sheetName}`]: {
           get: { summary: 'List rows', responses: { '200': { description: 'OK', content: { 'application/json': { schema: { type: 'array', items: schema } } } } } },

@@ -11,21 +11,21 @@
   <p>SheetsAPI is a standard REST+JSON API. Any HTTP client in any language works:</p>
 
   <h3 class="font-semibold mt-6">TypeScript / JavaScript</h3>
-  <pre class="code mt-2">{`const res = await fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads');
+  <pre class="code mt-2">{`const res = await fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads');
 const leads = await res.json();`}</pre>
 
   <h3 class="font-semibold mt-6">Python</h3>
   <pre class="code mt-2">{`import requests
-r = requests.get('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads')
+r = requests.get('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads')
 leads = r.json()`}</pre>
 
   <h3 class="font-semibold mt-6">Go</h3>
-  <pre class="code mt-2">{`r, _ := http.Get("https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads")
+  <pre class="code mt-2">{`r, _ := http.Get("https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads")
 var leads []map[string]string
 json.NewDecoder(r.Body).Decode(&leads)`}</pre>
 
   <h3 class="font-semibold mt-6">Swift</h3>
-  <pre class="code mt-2">{`let url = URL(string: "https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads")!
+  <pre class="code mt-2">{`let url = URL(string: "https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads")!
 let (data, _) = try await URLSession.shared.data(from: url)
 let leads = try JSONDecoder().decode([[String: String]].self, from: data)`}</pre>
 

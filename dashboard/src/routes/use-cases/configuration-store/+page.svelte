@@ -7,7 +7,7 @@ experimental_ai   | true    | 10      | 10% rollout
 dark_mode_default | false   | 0       | `;
 
   const code = `// Fetch flags at app boot
-const r = await fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/flags');
+const r = await fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/flags');
 const flags = Object.fromEntries((await r.json()).map(f => [f.flag, f.enabled === 'true']));
 if (flags.new_checkout_ui) showNewCheckout();`;
 

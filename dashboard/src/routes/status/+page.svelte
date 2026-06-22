@@ -3,8 +3,8 @@
   import ScrollReveal from '$lib/ScrollReveal.svelte';
 
   const components = [
-    { name: 'API — sheets.mreshank.com', status: 'operational' },
-    { name: 'Dashboard — sheets.mreshank.com', status: 'operational' },
+    { name: 'API — sheetsapi.gkit.mreshank.com', status: 'operational' },
+    { name: 'Dashboard — sheetsapi.gkit.mreshank.com', status: 'operational' },
     { name: 'OAuth — Google', status: 'operational' },
     { name: 'Google Sheets API', status: 'operational' },
     { name: 'Cloudflare D1', status: 'operational' }

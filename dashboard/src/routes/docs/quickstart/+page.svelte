@@ -23,20 +23,20 @@ Alan  | alan@example.com   | 2026-04-22</pre>
   <h2 class="text-2xl font-semibold mt-10">3. Call the API</h2>
 
   <h3 class="font-semibold mt-6">Read rows</h3>
-  <pre class="code mt-2">curl 'https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads'</pre>
+  <pre class="code mt-2">curl 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads'</pre>
 
   <h3 class="font-semibold mt-6">Append a row</h3>
-  <pre class="code mt-2">{`curl -X POST 'https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads' \\
+  <pre class="code mt-2">{`curl -X POST 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads' \\
   -H 'content-type: application/json' \\
   -d '{"name":"Grace","email":"grace@example.com","created_at":"2026-04-23"}'`}</pre>
 
   <h3 class="font-semibold mt-6">Update row 1</h3>
-  <pre class="code mt-2">{`curl -X PUT 'https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads/1' \\
+  <pre class="code mt-2">{`curl -X PUT 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads/1' \\
   -H 'content-type: application/json' \\
   -d '{"name":"Ada Lovelace","email":"ada@example.com","created_at":"2026-04-21"}'`}</pre>
 
   <h3 class="font-semibold mt-6">Delete row 1</h3>
-  <pre class="code mt-2">curl -X DELETE 'https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads/1'</pre>
+  <pre class="code mt-2">curl -X DELETE 'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads/1'</pre>
 
   <h2 class="text-2xl font-semibold mt-10">Next</h2>
   <ul class="mt-2 list-disc pl-5 space-y-1">

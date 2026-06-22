@@ -6,7 +6,7 @@ Ada    | Mathematician | https://.../a.jpg | true
 Alan   | Computer sci  | https://.../b.jpg | false`;
 
   const code = `// Webflow / Framer — fetch + render via custom code
-fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/team?search=featured:true')
+fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/team?search=featured:true')
   .then(r => r.json())
   .then(team => team.forEach(member => renderCard(member)));`;
 

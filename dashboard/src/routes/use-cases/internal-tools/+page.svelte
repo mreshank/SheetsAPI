@@ -7,10 +7,10 @@ alan@acme.com   | free | 50      | `;
 
   const code = `// Admin dashboard — find user + adjust credits
 const r = await fetch(
-  'https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/users?search_exact=user_email:' + email
+  'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/users?search_exact=user_email:' + email
 );
 const [user] = await r.json();
-await fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/users/' + user.row_index, {
+await fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/users/' + user.row_index, {
   method: 'PUT',
   headers: { 'content-type': 'application/json' },
   body: JSON.stringify({ ...user, credits: String(Number(user.credits) + 100) })

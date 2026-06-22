@@ -15,7 +15,7 @@
   const sampleRow = { email: 'ada@example.com', first_name: 'Ada', company: 'Analytics Inc', utm_source: 'google', utm_medium: 'cpc', utm_campaign: 'spring-launch', landing_page: '/features', captured_at: '2026-04-21T10:00:00Z' };
 
   const code = `const params = new URLSearchParams(location.search);
-await fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads', {
+await fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads', {
   method: 'POST',
   headers: { 'content-type': 'application/json' },
   body: JSON.stringify({

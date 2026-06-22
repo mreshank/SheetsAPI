@@ -30,5 +30,5 @@
   <p>When you authenticate with Google, you are briefly on <code>accounts.google.com</code> — Google sets their own cookies there per their policy. That's out of our scope.</p>
 
   <h2 class="text-2xl font-semibold mt-10">How to clear</h2>
-  <p>Sign out of the dashboard, or clear your browser's site data for <code>sheets.mreshank.com</code>.</p>
+  <p>Sign out of the dashboard, or clear your browser's site data for <code>sheetsapi.gkit.mreshank.com</code>.</p>
 </article>

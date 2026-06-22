@@ -27,7 +27,7 @@
   </table>
 
   <h2 class="text-2xl font-semibold mt-10">Measurement</h2>
-  <p>Uptime is measured from external probes hitting <code>https://sheets.mreshank.com/health</code> every minute. Published on <a href="/status" style="color:rgba(255,255,255,0.7);text-decoration:underline;">/status</a>.</p>
+  <p>Uptime is measured from external probes hitting <code>https://sheetsapi.gkit.mreshank.com/health</code> every minute. Published on <a href="/status" style="color:rgba(255,255,255,0.7);text-decoration:underline;">/status</a>.</p>
 
   <h2 class="text-2xl font-semibold mt-10">Exclusions</h2>
   <ul class="list-disc pl-5 space-y-1">

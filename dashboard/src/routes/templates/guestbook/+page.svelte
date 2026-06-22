@@ -12,7 +12,7 @@
 
   const code = `// Display latest 50 messages
 const r = await fetch(
-  'https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/guestbook?sort=-timestamp&limit=50'
+  'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/guestbook?sort=-timestamp&limit=50'
 );
 const entries = await r.json();`;
 </script>

@@ -18,7 +18,7 @@
     schema?: JsonLd[];
   } = $props();
 
-  const SITE = 'https://sheets.mreshank.com';
+  const SITE = 'https://sheetsapi.gkit.mreshank.com';
   const fullTitle = title.includes('SheetsAPI') ? title : `${title} · SheetsAPI`;
   const fullCanonical = canonical.startsWith('http') ? canonical : SITE + canonical;
   const ogImage = og.image ?? `${SITE}/og-default.svg`;

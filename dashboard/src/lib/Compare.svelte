@@ -31,9 +31,9 @@
   const canonical = `/compare/${slug}`;
   const schema = [
     breadcrumbSchema([
-      { name: 'Home', url: 'https://sheets.mreshank.com/' },
-      { name: 'Compare', url: 'https://sheets.mreshank.com/compare' },
-      { name: competitor, url: `https://sheets.mreshank.com${canonical}` }
+      { name: 'Home', url: 'https://sheetsapi.gkit.mreshank.com/' },
+      { name: 'Compare', url: 'https://sheetsapi.gkit.mreshank.com/compare' },
+      { name: competitor, url: `https://sheetsapi.gkit.mreshank.com${canonical}` }
     ]),
     ...(faqs.length ? [faqSchema(faqs)] : [])
   ];

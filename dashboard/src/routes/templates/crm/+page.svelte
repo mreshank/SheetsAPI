@@ -16,7 +16,7 @@
 
   const code = `// Get qualified leads for a sales rep
 const r = await fetch(
-  'https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads?search_exact=stage:qualified&search=owner:sam&sort=-last_touched'
+  'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads?search_exact=stage:qualified&search=owner:sam&sort=-last_touched'
 );
 const leads = await r.json();`;
 </script>

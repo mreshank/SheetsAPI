@@ -9,7 +9,7 @@
   let body = $state('{"name":"Ada","email":"ada@example.com"}');
 
   let url = $derived.by(() => {
-    const base = `https://sheets.mreshank.com/api/spreadsheets/${userKey}/${encodeURIComponent(sheetName)}`;
+    const base = `https://sheetsapi.gkit.mreshank.com/api/spreadsheets/${userKey}/${encodeURIComponent(sheetName)}`;
     return row ? `${base}/${row}` : base;
   });
 

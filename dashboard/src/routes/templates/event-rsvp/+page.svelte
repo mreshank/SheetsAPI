@@ -13,7 +13,7 @@
   const sampleRow = { name: 'Ada Lovelace', email: 'ada@example.com', guests: '2', dietary: 'vegetarian', note: 'Can\'t wait!', rsvp_at: '2026-04-21T10:00:00Z' };
 
   const code = `// RSVP form submit
-await fetch('https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/rsvps', {
+await fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/rsvps', {
   method: 'POST',
   headers: { 'content-type': 'application/json' },
   body: JSON.stringify({ ...formData, rsvp_at: new Date().toISOString() })

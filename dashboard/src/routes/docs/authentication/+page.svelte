@@ -24,7 +24,7 @@
   <h2 class="text-2xl font-semibold mt-10">Progressive API keys</h2>
   <p>Endpoints are <strong>public by default</strong>. The moment you create your first API key in the dashboard, <em>all</em> your endpoints start requiring it.</p>
   <pre class="code mt-3">curl -H 'authorization: Bearer sk_abc123...' \
-  'https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/leads'</pre>
+  'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/leads'</pre>
 
   <h2 class="text-2xl font-semibold mt-10">Revoking access</h2>
   <p>Two paths — either works:</p>

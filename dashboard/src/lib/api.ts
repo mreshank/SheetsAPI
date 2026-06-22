@@ -2,7 +2,7 @@ import { API_BASE } from './config';
 import { getSession } from './session';
 
 // All Worker endpoints live under /api on the same origin as the dashboard
-// (sheets.mreshank.com). API_BASE is the origin; we prepend /api here.
+// (sheetsapi.gkit.mreshank.com). API_BASE is the origin; we prepend /api here.
 async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   const s = getSession();
   const headers = new Headers(init.headers);

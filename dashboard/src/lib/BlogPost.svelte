@@ -12,12 +12,12 @@
   }: { slug: string; title: string; description: string; date: string; children: any } = $props();
 
   const canonical = `/blog/${slug}`;
-  const url = `https://sheets.mreshank.com${canonical}`;
+  const url = `https://sheetsapi.gkit.mreshank.com${canonical}`;
   const schema = [
     articleSchema({ headline: title, description, url, datePublished: date }),
     breadcrumbSchema([
-      { name: 'Home', url: 'https://sheets.mreshank.com/' },
-      { name: 'Blog', url: 'https://sheets.mreshank.com/blog' },
+      { name: 'Home', url: 'https://sheetsapi.gkit.mreshank.com/' },
+      { name: 'Blog', url: 'https://sheetsapi.gkit.mreshank.com/blog' },
       { name: title, url }
     ])
   ];

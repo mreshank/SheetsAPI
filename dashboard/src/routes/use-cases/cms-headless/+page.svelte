@@ -8,7 +8,7 @@ shipped | We shipped it  | Alan      | 2026-04-15   | <markdown>`;
   const code = `// Next.js — pages/blog/[slug].tsx
 export async function getStaticProps({ params }) {
   const res = await fetch(
-    \`https://sheets.mreshank.com/api/spreadsheets/YOUR_KEY/posts?search_exact=slug:\${params.slug}\`
+    \`https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/posts?search_exact=slug:\${params.slug}\`
   );
   const [post] = await res.json();
   return { props: { post }, revalidate: 60 };

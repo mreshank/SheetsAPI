@@ -1,6 +1,6 @@
 export const prerender = true;
 
-const SITE = 'https://sheets.mreshank.com';
+const SITE = 'https://sheetsapi.gkit.mreshank.com';
 
 const routes = [
   '',
