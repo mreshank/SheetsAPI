@@ -1,0 +1,21 @@
+{
+  "timeZone": "Etc/GMT",
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/spreadsheets.currentonly",
+    "https://www.googleapis.com/auth/script.container.ui",
+    "https://www.googleapis.com/auth/script.external_request"
+  ],
+  "addOns": {
+    "common": {
+      "name": "SheetsAPI",
+      "logoUrl": "https://sheets.mreshank.com/favicon-128.png",
+      "useLocaleFromApp": true,
+      "homepageTrigger": { "runFunction": "onHomepage", "enabled": true }
+    },
+    "sheets": {
+      "homepageTrigger": { "runFunction": "onHomepage", "enabled": true }
+    }
+  }
+}

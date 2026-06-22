@@ -1,0 +1,5 @@
+Contact: mailto:security@mreshank.com
+Expires: 2027-04-21T00:00:00Z
+Preferred-Languages: en
+Canonical: https://sheets.mreshank.com/.well-known/security.txt
+Policy: https://sheets.mreshank.com/legal/security
