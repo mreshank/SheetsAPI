@@ -1,20 +1,24 @@
 <script lang="ts">
-  import Template from '$lib/Template.svelte';
+  import Template from "$lib/Template.svelte";
 
   const columns = [
-    { name: 'timestamp', type: 'string (ISO 8601)', notes: 'Set client-side on submit' },
-    { name: 'name', type: 'string' },
-    { name: 'email', type: 'string' },
-    { name: 'message', type: 'string', notes: 'Long text OK' },
-    { name: 'source', type: 'string', notes: 'Optional — page or campaign' }
+    {
+      name: "timestamp",
+      type: "string (ISO 8601)",
+      notes: "Set client-side on submit",
+    },
+    { name: "name", type: "string" },
+    { name: "email", type: "string" },
+    { name: "message", type: "string", notes: "Long text OK" },
+    { name: "source", type: "string", notes: "Optional - page or campaign" },
   ];
 
   const sampleRow = {
-    timestamp: '2026-04-21T10:00:00Z',
-    name: 'Ada Lovelace',
-    email: 'ada@example.com',
-    message: 'Love the product!',
-    source: 'homepage'
+    timestamp: "2026-04-21T10:00:00Z",
+    name: "Ada Lovelace",
+    email: "ada@example.com",
+    message: "Love the product!",
+    source: "homepage",
   };
 
   const code = `document.querySelector('form').addEventListener('submit', async (e) => {

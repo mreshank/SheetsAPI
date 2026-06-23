@@ -28,7 +28,7 @@ describe("encrypt / decrypt", () => {
   });
 
   it("round-trips unicode", async () => {
-    const s = "café — 日本語 — 🚀";
+    const s = "café - 日本語 - 🚀";
     expect(await decrypt(await encrypt(s, KEY), KEY)).toBe(s);
   });
 });

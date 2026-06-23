@@ -1,5 +1,5 @@
 <script lang="ts">
-  import UseCase from '$lib/UseCase.svelte';
+  import UseCase from "$lib/UseCase.svelte";
 
   const sheetShape = `id | title       | body              | image_url         | published
 1  | Welcome     | Thanks for...    | https://.../a.png | true
@@ -13,9 +13,18 @@ const posts = await r.json();
 setPosts(posts);`;
 
   const faqs = [
-    { q: 'Is it fast enough for mobile?', a: 'Typical response ~150ms from Cloudflare edge. Cache responses client-side for 60s to eliminate most requests.' },
-    { q: 'How do I handle offline?', a: 'Cache responses in AsyncStorage / UserDefaults / SharedPreferences. Refetch on reconnect.' },
-    { q: 'Can I update from the app?', a: 'Yes — POST/PUT/DELETE work the same. Use API keys to gate write access.' }
+    {
+      q: "Is it fast enough for mobile?",
+      a: "Typical response ~150ms from Cloudflare edge. Cache responses client-side for 60s to eliminate most requests.",
+    },
+    {
+      q: "How do I handle offline?",
+      a: "Cache responses in AsyncStorage / UserDefaults / SharedPreferences. Refetch on reconnect.",
+    },
+    {
+      q: "Can I update from the app?",
+      a: "Yes - POST/PUT/DELETE work the same. Use API keys to gate write access.",
+    },
   ];
 </script>
 

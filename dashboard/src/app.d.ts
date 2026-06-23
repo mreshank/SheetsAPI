@@ -2,7 +2,7 @@
 // for information about these interfaces.
 
 /**
- * SheetsAPI dashboard — type augmentations for SvelteKit.
+ * SheetsAPI dashboard - type augmentations for SvelteKit.
  *
  * The dashboard is a pure SPA (no SvelteKit server runtime in production),
  * so `Locals`, `PageData`, and `Platform` are intentionally empty. If we

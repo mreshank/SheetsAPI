@@ -1,11 +1,11 @@
 <script lang="ts">
-  import UseCase from '$lib/UseCase.svelte';
+  import UseCase from "$lib/UseCase.svelte";
 
   const sheetShape = `user_email      | plan | credits | flags
 ada@example.com | pro  | 1200    | beta,analytics
 alan@acme.com   | free | 50      | `;
 
-  const code = `// Admin dashboard — find user + adjust credits
+  const code = `// Admin dashboard - find user + adjust credits
 const r = await fetch(
   'https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/users?search_exact=user_email:' + email
 );
@@ -17,8 +17,14 @@ await fetch('https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/users
 });`;
 
   const faqs = [
-    { q: 'Is Sheets safe for internal data?', a: 'With API keys enabled and Google Workspace access controls, yes. For sensitive internal data (financials, PII) consider self-hosting.' },
-    { q: 'Audit trail?', a: 'Sheets version history logs every edit. Our audit log is on the roadmap for Pro.' }
+    {
+      q: "Is Sheets safe for internal data?",
+      a: "With API keys enabled and Google Workspace access controls, yes. For sensitive internal data (financials, PII) consider self-hosting.",
+    },
+    {
+      q: "Audit trail?",
+      a: "Sheets version history logs every edit. Our audit log is on the roadmap for Pro.",
+    },
   ];
 </script>
 

@@ -273,7 +273,7 @@ app.delete("/spreadsheets/:userKey/:sheetName/:row", async (c) => {
 });
 
 // ---------- Dashboard management API (session via ?userKey= in cookie or query) ----------
-// These endpoints are called by the dashboard. Uses the userKey directly — the dashboard
+// These endpoints are called by the dashboard. Uses the userKey directly - the dashboard
 // is responsible for storing it as a session cookie after OAuth callback.
 
 function requireUserKey(c: { req: { query: (k: string) => string | undefined; header: (k: string) => string | undefined } }): string | null {
@@ -383,7 +383,7 @@ app.delete("/me/api-keys/:key", async (c) => {
 app.post("/me/logout", async (c) => {
   const userKey = requireUserKey(c);
   if (!userKey) return c.json({ ok: true });
-  // Delete user — cascade removes spreadsheets and api_keys
+  // Delete user - cascade removes spreadsheets and api_keys
   await c.env.DB.prepare("DELETE FROM users WHERE user_key = ?").bind(userKey).run();
   return c.json({ ok: true });
 });

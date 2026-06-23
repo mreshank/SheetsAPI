@@ -1,5 +1,5 @@
 <script lang="ts">
-  import UseCase from '$lib/UseCase.svelte';
+  import UseCase from "$lib/UseCase.svelte";
 
   const sheetShape = `id | name  | company   | email       | stage    | value
 1  | Ada   | Analytics | ada@...     | qualified| 5000
@@ -18,8 +18,14 @@ const r = await fetch(
 );`;
 
   const faqs = [
-    { q: 'Can sales edit the sheet directly?', a: 'Yes — that\'s the point. Your team edits in Sheets; your apps read via the API.' },
-    { q: 'Can I sync with HubSpot or Salesforce?', a: 'Use Zapier/Make (v0.4) or webhooks (v0.4) to push changes to other systems.' }
+    {
+      q: "Can sales edit the sheet directly?",
+      a: "Yes - that's the point. Your team edits in Sheets; your apps read via the API.",
+    },
+    {
+      q: "Can I sync with HubSpot or Salesforce?",
+      a: "Use Zapier/Make (v0.4) or webhooks (v0.4) to push changes to other systems.",
+    },
   ];
 </script>
 

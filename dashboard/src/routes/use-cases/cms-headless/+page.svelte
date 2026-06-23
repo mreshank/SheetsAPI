@@ -1,11 +1,11 @@
 <script lang="ts">
-  import UseCase from '$lib/UseCase.svelte';
+  import UseCase from "$lib/UseCase.svelte";
 
   const sheetShape = `slug    | title          | author    | published_at | body
 hello   | Hello world    | Ada       | 2026-04-01   | <markdown>
 shipped | We shipped it  | Alan      | 2026-04-15   | <markdown>`;
 
-  const code = `// Next.js — pages/blog/[slug].tsx
+  const code = `// Next.js - pages/blog/[slug].tsx
 export async function getStaticProps({ params }) {
   const res = await fetch(
     \`https://sheetsapi.gkit.mreshank.com/api/spreadsheets/YOUR_KEY/posts?search_exact=slug:\${params.slug}\`
@@ -15,9 +15,18 @@ export async function getStaticProps({ params }) {
 }`;
 
   const faqs = [
-    { q: 'Does it support markdown?', a: 'Store markdown in a cell; render with any MD library (remark, markdown-it). Sheets stores plain text — your app renders it.' },
-    { q: 'Rich content?', a: 'Use a CDN for images (Cloudinary, uploadcare) and paste URLs into Sheets. Embed video IDs and render with the player.' },
-    { q: 'Preview drafts?', a: 'Add a status column (draft/published). Filter with ?search_exact=status:published in production, show all in preview mode.' }
+    {
+      q: "Does it support markdown?",
+      a: "Store markdown in a cell; render with any MD library (remark, markdown-it). Sheets stores plain text - your app renders it.",
+    },
+    {
+      q: "Rich content?",
+      a: "Use a CDN for images (Cloudinary, uploadcare) and paste URLs into Sheets. Embed video IDs and render with the player.",
+    },
+    {
+      q: "Preview drafts?",
+      a: "Add a status column (draft/published). Filter with ?search_exact=status:published in production, show all in preview mode.",
+    },
   ];
 </script>
 

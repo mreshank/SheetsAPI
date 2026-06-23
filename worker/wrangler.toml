@@ -19,8 +19,8 @@ OAUTH_REDIRECT_URI = "https://sheetsapi.gkit.mreshank.com/api/oauth/callback"
 DASHBOARD_URL = "https://sheetsapi.gkit.mreshank.com"
 
 # Secrets (set via `wrangler secret put`):
-#   GOOGLE_CLIENT_SECRET — OAuth client secret
-#   ENCRYPTION_KEY       — 64-hex-char (32-byte) random string; used for AES-GCM on refresh tokens
+#   GOOGLE_CLIENT_SECRET - OAuth client secret
+#   ENCRYPTION_KEY       - 64-hex-char (32-byte) random string; used for AES-GCM on refresh tokens
 
 [[d1_databases]]
 binding = "DB"

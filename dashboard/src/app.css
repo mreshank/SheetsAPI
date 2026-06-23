@@ -1,12 +1,10 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 
 /* ================================================================
-   SheetsAPI Design System — xAI-inspired Dark Brutalist
+   SheetsAPI Design System - xAI-inspired Dark Brutalist
    ================================================================ */
-
-
 
 /* --- Design Tokens --- */
 @theme {
@@ -27,11 +25,11 @@
   --color-accent: #ffffff;
 
   /* Typography */
-  --font-mono: 'Bitcount Prop Single', system-ui, monospace;
-  --font-sans: 'Anta', system-ui, sans-serif;
-  --font-display: 'Anta', sans-serif;
-  --font-brand: 'Asimovian', sans-serif;
-  --font-pixel: 'Bitcount Prop Single', system-ui, monospace;
+  --font-mono: "Bitcount Prop Single", system-ui, monospace;
+  --font-sans: "Anta", system-ui, sans-serif;
+  --font-display: "Anta", sans-serif;
+  --font-brand: "Asimovian", sans-serif;
+  --font-pixel: "Bitcount Prop Single", system-ui, monospace;
 
   /* Spacing */
   --space-xs: 4px;
@@ -102,7 +100,11 @@ body {
 .font-pixel {
   font-family: var(--font-pixel);
   font-optical-sizing: auto;
-  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
 }
 
 .font-body {
@@ -130,7 +132,11 @@ body {
   font-family: var(--font-pixel);
   font-optical-sizing: auto;
   font-weight: 400;
-  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -147,7 +153,11 @@ body {
   padding: 12px 24px;
   font-family: var(--font-pixel);
   font-optical-sizing: auto;
-  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
@@ -168,7 +178,11 @@ body {
   padding: 12px 28px;
   font-family: var(--font-pixel);
   font-optical-sizing: auto;
-  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
@@ -194,7 +208,11 @@ body {
   padding: 12px 24px;
   font-family: var(--font-pixel);
   font-optical-sizing: auto;
-  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
@@ -232,7 +250,6 @@ body {
     opacity: 0.5;
   }
 }
-
 
 @utility btn-nav {
   display: inline-flex;
@@ -282,7 +299,6 @@ body {
   }
 }
 
-
 /* ================================================================
    Code Block
    ================================================================ */
@@ -308,7 +324,11 @@ body {
   padding: 4px 10px;
   font-family: var(--font-pixel);
   font-optical-sizing: auto;
-  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
@@ -323,7 +343,11 @@ body {
    Dot Grid Background
    ================================================================ */
 .bg-dots {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px
+  );
   background-size: 32px 32px;
 }
 
@@ -335,11 +359,15 @@ body {
 }
 
 .bg-gradient-radial {
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 255, 255, 0.06), transparent);
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(255, 255, 255, 0.06),
+    transparent
+  );
 }
 
 /* ================================================================
-   Animations — Keyframes
+   Animations - Keyframes
    ================================================================ */
 @keyframes fadeInUp {
   from {
@@ -410,7 +438,6 @@ body {
 }
 
 @keyframes blink {
-
   0%,
   100% {
     opacity: 1;
@@ -422,7 +449,6 @@ body {
 }
 
 @keyframes pulseGlow {
-
   0%,
   100% {
     opacity: 0.4;
@@ -434,7 +460,6 @@ body {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -480,7 +505,6 @@ body {
 }
 
 @keyframes borderGlow {
-
   0%,
   100% {
     border-color: rgba(255, 255, 255, 0.1);
@@ -583,7 +607,8 @@ body {
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -595,7 +620,8 @@ body {
 .reveal-left {
   opacity: 0;
   transform: translateX(-40px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -607,7 +633,8 @@ body {
 .reveal-right {
   opacity: 0;
   transform: translateX(40px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -619,7 +646,8 @@ body {
 .reveal-scale {
   opacity: 0;
   transform: scale(0.95);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
