@@ -7,7 +7,7 @@ SheetsAPI is positioned as a **free, open, full-featured replacement** for the p
 | Feature                            | **SheetsAPI** | SheetDB.io | Sheety.co | Sheetson | APISpreadsheets (Sheetsu) |
 | ---------------------------------- | :-----------: | :--------: | :-------: | :------: | :-----------------------: |
 | **Pricing**                        |               |            |           |          |                           |
-| Free tier                          | ✅ generous   | ⚠️ 500 req/mo | ⚠️ 500 req/mo | ⚠️ 5 req/sec, 500 rows | ⚠️ 250 req/day |
+| Free tier                          | ✅ 100k req/day (CF) | ⚠️ 500 req/mo | ⚠️ 200 req/mo | ⚠️ unmetered, 1k rows/sheet | ⚠️ 250 req/mo, 3 files |
 | Open source option                 | ✅            | ❌         | ❌        | ❌       | ❌                        |
 | Self-hostable                      | ✅            | ❌         | ❌        | ❌       | ❌                        |
 | **Core CRUD**                      |               |            |           |          |                           |
@@ -52,19 +52,19 @@ SheetsAPI is positioned as a **free, open, full-featured replacement** for the p
 ## Why switch?
 
 ### vs **SheetDB.io**
-- SheetDB free tier is 500 requests/month — unusable for anything real. Paid tier starts at ~$14/mo.
+- SheetDB free tier is 500 requests/month — tight for anything real. Paid tier starts at $29.99/mo.
 - SheetsAPI free tier covers 100k requests/day on Cloudflare.
 - SheetsAPI is self-hostable; SheetDB is not.
 
 ### vs **Sheety.co**
-- Sheety's free is 200 requests/day; paid starts ~$9/mo.
+- Sheety's free is 200 requests/month; paid starts at $9.99/mo.
 - Sheety doesn't offer CSV/XML output.
 - No self-host option.
 
 ### vs **Sheetson**
-- Similar free tier restrictions (500 rows).
-- UI is dated; no Workspace Marketplace presence.
-- Paid starts ~$12/mo.
+- Free tier is unmetered on requests but caps each sheet at 1,000 rows.
+- No Workspace Marketplace presence.
+- Paid is $99/year (~$8.25/mo).
 
 ### vs **APISpreadsheets / Sheetsu**
 - Sheetsu sunsetted; APISpreadsheets picked up the mantle.
@@ -112,16 +112,19 @@ const rows = Array.isArray(r) ? r : r[tabName];
 2. Default SheetsAPI maps cleanly since column names become JSON keys the same way.
 3. Search query differs: `?query=select * where name='Ada'` → SheetsAPI uses `?search=name:Ada`.
 
-## Pricing comparison (estimated)
+## Pricing comparison
 
-| Usage                   | SheetDB  | Sheety  | Sheetson | APISpreadsheets | **SheetsAPI** |
-| ----------------------- | -------- | ------- | -------- | --------------- | ------------- |
-| Free tier (per month)   | 500 req  | 200/day | 500 rows | 7,500 req       | ~3M req       |
-| 10k req/mo              | $14      | $9      | $12      | $10             | **$0**        |
-| 100k req/mo             | $29      | $29     | $24      | $50             | **$0**        |
-| 1M req/mo               | $99      | $99     | $99      | custom          | **$0–5**      |
+Free tiers verified June 2026 from each vendor's pricing page. Per-usage paid rows
+are **estimates** for rough comparison — see each vendor for exact tier breakpoints.
 
-(All paid tiers include features we match/exceed.)
+| Usage                   | SheetDB  | Sheety   | Sheetson      | APISpreadsheets | **SheetsAPI** |
+| ----------------------- | -------- | -------- | ------------- | --------------- | ------------- |
+| Free tier               | 500 req/mo | 200 req/mo | unmetered, 1k rows | 250 req/mo | ~3M req/mo (CF) |
+| Entry paid plan         | $29.99/mo | $9.99/mo | $99/yr (~$8/mo) | paid          | **$0 (beta)** |
+| 100k req/mo (est.)      | ~$30      | ~$30     | ~$8           | ~$50            | **$0**        |
+| 1M req/mo (est.)        | ~$99      | ~$80     | ~$8           | custom          | **$0–5**      |
+
+Sources: [SheetDB](https://sheetdb.io/pricing), [Sheety](https://sheety.co/pricing), [Sheetson](https://sheetson.com/), [APISpreadsheets](https://www.apispreadsheets.com/pricing). Sheetson does not meter requests, so its price is flat regardless of volume.
 
 ## Why we win
 

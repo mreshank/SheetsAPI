@@ -80,19 +80,22 @@ npm run deploy
 
 ## Feature matrix vs competitors
 
-|                            | SheetsAPI | SheetDB | Sheety | Sheetson | APISpreadsheets |
-| -------------------------- | :-------: | :-----: | :----: | :------: | :-------------: |
-| Free req/day               | 100k (CF)     | 500     | 6k     | 500 rows | 7.5k            |
-| 100k req/mo cost           | **$0**    | $29     | $29    | $24      | $50             |
-| Open source                | ✅        | ❌       | ❌     | ❌        | ❌              |
-| Self-hostable              | ✅        | ❌       | ❌     | ❌        | ❌              |
-| Workspace Marketplace      | ✅        | ❌       | ❌     | ❌        | ❌              |
-| OAuth + API keys           | ✅        | ✅       | ✅     | ✅        | ✅              |
-| JSON/CSV/TSV/XML/JSONP     | ✅        | partial | JSON   | JSON     | partial         |
-| Search + sort + pagination | ✅        | ✅       | ✅     | ✅        | ✅              |
-| Encrypted tokens at rest   | Documented | ?     | ?      | ?        | ?               |
+Free tiers and entry prices verified June 2026 from each vendor's pricing page (linked below).
 
-See [`docs/12-competitors.md`](./docs/12-competitors.md) for full breakdown + migration guides.
+|                            | SheetsAPI            | SheetDB     | Sheety      | Sheetson         | APISpreadsheets |
+| -------------------------- | :------------------: | :---------: | :---------: | :--------------: | :-------------: |
+| Free tier                  | 100k req/day (CF)    | 500 req/mo  | 200 req/mo  | unmetered, 1k rows/sheet | 250 req/mo, 3 files |
+| Entry paid plan            | **$0 (beta)**        | $29.99/mo   | $9.99/mo    | $99/yr (~$8.25/mo) | paid (see site) |
+| Open source                | ✅                   | ❌          | ❌          | ❌               | ❌              |
+| Self-hostable              | ✅                   | ❌          | ❌          | ❌               | ❌              |
+| OAuth + API keys           | ✅                   | ✅          | ✅          | ✅               | ✅              |
+| JSON/CSV/TSV/XML/JSONP     | ✅                   | partial     | JSON        | JSON             | partial         |
+| Search + sort + pagination | ✅                   | ✅          | ✅          | ✅               | ✅              |
+| Encrypted tokens at rest   | ✅                   | n/d         | n/d         | n/d              | n/d             |
+
+Sources (June 2026): [SheetDB](https://sheetdb.io/pricing) · [Sheety](https://sheety.co/pricing) · [Sheetson](https://sheetson.com/) · [APISpreadsheets](https://www.apispreadsheets.com/pricing). Note: **Sheetsu shut down on April 1, 2024** and is no longer a live option. "n/d" = not disclosed by the vendor.
+
+See [`docs/12-competitors.md`](./docs/12-competitors.md) for the full breakdown + migration guides.
 
 ## Cost
 
