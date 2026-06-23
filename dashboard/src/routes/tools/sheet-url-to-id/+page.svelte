@@ -29,8 +29,9 @@
   </p>
 
   <div class="mt-8">
-    <label class="text-sm font-medium">URL</label>
+    <label class="text-sm font-medium" for="surl-input">URL</label>
     <input
+      id="surl-input"
       bind:value={input}
       class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono text-sm"
     />

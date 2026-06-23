@@ -20,12 +20,14 @@
   let el: HTMLDivElement;
   let revealed = $state(false);
 
-  const dirClass = {
-    up: 'reveal',
-    left: 'reveal-left',
-    right: 'reveal-right',
-    scale: 'reveal-scale'
-  }[direction];
+  const dirClass = $derived(
+    {
+      up: 'reveal',
+      left: 'reveal-left',
+      right: 'reveal-right',
+      scale: 'reveal-scale'
+    }[direction]
+  );
 
   onMount(() => {
     const observer = new IntersectionObserver(

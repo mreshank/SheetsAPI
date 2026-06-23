@@ -39,33 +39,33 @@
 
   <div class="card p-6 mt-8 space-y-4">
     <div>
-      <label class="text-sm font-medium">Method</label>
-      <select bind:value={method} class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200">
+      <label class="text-sm font-medium" for="cb-method">Method</label>
+      <select id="cb-method" bind:value={method} class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200">
         <option>GET</option><option>POST</option><option>PUT</option><option>DELETE</option>
       </select>
     </div>
     <div class="grid grid-cols-2 gap-3">
       <div>
-        <label class="text-sm font-medium">userKey</label>
-        <input bind:value={userKey} class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono" />
+        <label class="text-sm font-medium" for="cb-userkey">userKey</label>
+        <input id="cb-userkey" bind:value={userKey} class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono" />
       </div>
       <div>
-        <label class="text-sm font-medium">Sheet name</label>
-        <input bind:value={sheetName} class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono" />
+        <label class="text-sm font-medium" for="cb-sheet">Sheet name</label>
+        <input id="cb-sheet" bind:value={sheetName} class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono" />
       </div>
     </div>
     <div>
-      <label class="text-sm font-medium">Row (optional)</label>
-      <input bind:value={row} class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono" placeholder="e.g. 1" />
+      <label class="text-sm font-medium" for="cb-row">Row (optional)</label>
+      <input id="cb-row" bind:value={row} class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono" placeholder="e.g. 1" />
     </div>
     <div>
-      <label class="text-sm font-medium">API key (optional)</label>
-      <input bind:value={apiKey} class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono" placeholder="sk_..." />
+      <label class="text-sm font-medium" for="cb-apikey">API key (optional)</label>
+      <input id="cb-apikey" bind:value={apiKey} class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono" placeholder="sk_..." />
     </div>
     {#if method === 'POST' || method === 'PUT'}
       <div>
-        <label class="text-sm font-medium">Body (JSON)</label>
-        <textarea bind:value={body} class="w-full h-32 mt-1 p-3 font-mono text-sm rounded-lg border border-slate-200"></textarea>
+        <label class="text-sm font-medium" for="cb-body">Body (JSON)</label>
+        <textarea id="cb-body" bind:value={body} class="w-full h-32 mt-1 p-3 font-mono text-sm rounded-lg border border-slate-200"></textarea>
       </div>
     {/if}
   </div>

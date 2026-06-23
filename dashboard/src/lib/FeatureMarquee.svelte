@@ -10,7 +10,7 @@
   } = $props();
 
   // Double the items for seamless loop
-  const doubled = [...items, ...items];
+  const doubled = $derived([...items, ...items]);
 </script>
 
 <div class="overflow-hidden {className}" style="mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);">

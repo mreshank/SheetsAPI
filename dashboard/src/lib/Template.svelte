@@ -9,14 +9,14 @@
     sampleRow: Record<string, string>; code: string;
   } = $props();
 
-  const canonical = `/templates/${slug}`;
-  const schema = [
+  const canonical = $derived(`/templates/${slug}`);
+  const schema = $derived([
     breadcrumbSchema([
       { name: 'Home', url: 'https://sheetsapi.gkit.mreshank.com/' },
       { name: 'Templates', url: 'https://sheetsapi.gkit.mreshank.com/templates' },
       { name: title, url: `https://sheetsapi.gkit.mreshank.com${canonical}` }
     ])
-  ];
+  ]);
 </script>
 
 <Seo {title} {description} {canonical} {schema} />

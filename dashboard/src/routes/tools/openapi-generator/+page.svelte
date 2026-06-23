@@ -102,19 +102,22 @@
 
   <div class="card p-6 mt-8 grid sm:grid-cols-3 gap-3">
     <div>
-      <label class="text-sm font-medium">userKey</label><input
+      <label class="text-sm font-medium" for="oa-userkey">userKey</label><input
+        id="oa-userkey"
         bind:value={userKey}
         class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono text-sm"
       />
     </div>
     <div>
-      <label class="text-sm font-medium">Sheet name</label><input
+      <label class="text-sm font-medium" for="oa-sheet">Sheet name</label><input
+        id="oa-sheet"
         bind:value={sheetName}
         class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono text-sm"
       />
     </div>
     <div>
-      <label class="text-sm font-medium">Columns (CSV)</label><input
+      <label class="text-sm font-medium" for="oa-columns">Columns (CSV)</label><input
+        id="oa-columns"
         bind:value={columns}
         class="w-full mt-1 px-3 py-2 rounded-lg border border-slate-200 font-mono text-sm"
       />

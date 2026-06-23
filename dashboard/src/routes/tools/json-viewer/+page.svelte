@@ -44,8 +44,9 @@
 
   <div class="grid md:grid-cols-2 gap-4 mt-8">
     <div>
-      <label class="text-sm font-medium">Input</label>
+      <label class="text-sm font-medium" for="json-input">Input</label>
       <textarea
+        id="json-input"
         bind:value={input}
         class="w-full h-96 mt-1 p-3 font-mono text-sm rounded-lg border border-slate-200"
       ></textarea>
@@ -55,7 +56,7 @@
       </div>
     </div>
     <div>
-      <label class="text-sm font-medium">Output</label>
+      <span class="block text-sm font-medium">Output</span>
       {#if error}
         <div class="mt-1 p-3 bg-red-50 text-red-700 rounded-lg text-sm">
           {error}

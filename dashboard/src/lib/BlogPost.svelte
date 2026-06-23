@@ -11,16 +11,16 @@
     children
   }: { slug: string; title: string; description: string; date: string; children: any } = $props();
 
-  const canonical = `/blog/${slug}`;
-  const url = `https://sheetsapi.gkit.mreshank.com${canonical}`;
-  const schema = [
+  const canonical = $derived(`/blog/${slug}`);
+  const url = $derived(`https://sheetsapi.gkit.mreshank.com${canonical}`);
+  const schema = $derived([
     articleSchema({ headline: title, description, url, datePublished: date }),
     breadcrumbSchema([
       { name: 'Home', url: 'https://sheetsapi.gkit.mreshank.com/' },
       { name: 'Blog', url: 'https://sheetsapi.gkit.mreshank.com/blog' },
       { name: title, url }
     ])
-  ];
+  ]);
 </script>
 
 <Seo {title} {description} {canonical} og={{ type: 'article' }} {schema} />

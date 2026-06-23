@@ -8,15 +8,15 @@
     faqs?: { q: string; a: string }[]; children?: any;
   } = $props();
 
-  const canonical = `/use-cases/${slug}`;
-  const schema = [
+  const canonical = $derived(`/use-cases/${slug}`);
+  const schema = $derived([
     breadcrumbSchema([
       { name: 'Home', url: 'https://sheetsapi.gkit.mreshank.com/' },
       { name: 'Use cases', url: 'https://sheetsapi.gkit.mreshank.com/use-cases' },
       { name: title, url: `https://sheetsapi.gkit.mreshank.com${canonical}` }
     ]),
     ...(faqs.length ? [faqSchema(faqs)] : [])
-  ];
+  ]);
 </script>
 
 <Seo {title} {description} {canonical} {schema} />

@@ -26,14 +26,14 @@
     { href: '/docs/webhooks', label: 'Webhooks' }
   ];
 
-  const canonical = `/docs/${slug}`;
-  const schema = [
+  const canonical = $derived(`/docs/${slug}`);
+  const schema = $derived([
     breadcrumbSchema([
       { name: 'Home', url: 'https://sheetsapi.gkit.mreshank.com/' },
       { name: 'Docs', url: 'https://sheetsapi.gkit.mreshank.com/docs' },
       { name: title, url: `https://sheetsapi.gkit.mreshank.com${canonical}` }
     ])
-  ];
+  ]);
 </script>
 
 <Seo {title} {description} {canonical} {schema} />

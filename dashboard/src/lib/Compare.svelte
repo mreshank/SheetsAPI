@@ -28,15 +28,15 @@
     faqs?: { q: string; a: string }[];
   } = $props();
 
-  const canonical = `/compare/${slug}`;
-  const schema = [
+  const canonical = $derived(`/compare/${slug}`);
+  const schema = $derived([
     breadcrumbSchema([
       { name: 'Home', url: 'https://sheetsapi.gkit.mreshank.com/' },
       { name: 'Compare', url: 'https://sheetsapi.gkit.mreshank.com/compare' },
       { name: competitor, url: `https://sheetsapi.gkit.mreshank.com${canonical}` }
     ]),
     ...(faqs.length ? [faqSchema(faqs)] : [])
-  ];
+  ]);
 </script>
 
 <Seo {title} {description} {canonical} {schema} />
